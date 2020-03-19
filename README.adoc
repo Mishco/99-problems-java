@@ -29,7 +29,7 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 == Table of content
 
-[toc]
+:toc:
 
 
 == Technology
