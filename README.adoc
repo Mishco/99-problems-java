@@ -31,5 +31,6 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === link:/src/main/java/lists/P01.java[P01 - Find the last element of the list]
 
+=== link:/src/main/java/lists/P02.java[P02 - Find the second last element of the list]
 
 
