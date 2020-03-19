@@ -1,8 +1,6 @@
 = 99 Problems in Java
 
-image:https://travis-ci.org/Mishco/99-problems.svg?branch=master["Build Status", link="https://travis-ci.org/Mishco/99-problems"]
-
-image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems&metric=alert_status[Quality Gate Status, link="https://sonarcloud.io/dashboard?id=Mishco_99-problems"]
+image:https://travis-ci.org/Mishco/99-problems.svg?branch=master["Build Status", link="https://travis-ci.org/Mishco/99-problems"] image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems&metric=alert_status[Quality Gate Status, link="https://sonarcloud.io/dashboard?id=Mishco_99-problems"]
 
 == Overview
 
