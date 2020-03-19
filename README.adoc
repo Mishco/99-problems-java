@@ -1,6 +1,8 @@
 = 99 Problems in Java
+:toc:
 
 image:https://travis-ci.org/Mishco/99-problems.svg?branch=master["Build Status", link="https://travis-ci.org/Mishco/99-problems"] image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems&metric=alert_status[Quality Gate Status, link="https://sonarcloud.io/dashboard?id=Mishco_99-problems"]
+
 
 == Overview
 
@@ -26,11 +28,6 @@ From the original source:
     You may need more time (i.e. a few hours or more) to find a good solution.
 
 The main purpose for this repository is to train Java skills and also deepen TDD skills link:https://martinfowler.com/bliki/TestDrivenDevelopment.html[Test Driven Development].
-
-== Table of content
-
-:toc:
-
 
 == Technology
 
