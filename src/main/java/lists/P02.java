@@ -11,11 +11,15 @@ package lists;
 
 import java.util.List;
 
+/**
+ * Class for returning the secondLast item from list
+ */
 public class P02 {
 
-    private P02() { }
+    private P02() {
+    }
 
     public static Object secondLast(List<Integer> numbers) {
-        return numbers;
+        return numbers.get(numbers.size() - 2);
     }
 }

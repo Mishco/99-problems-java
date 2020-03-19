@@ -1,8 +1,11 @@
 package lists;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -22,4 +25,13 @@ class ListTests {
         assertThat(P02.secondLast(numbers), is(equalTo(10)));
     }
 
+    @Test
+    public void shouldThrowExceptionWhenListEmpty() {
+        Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(Collections.emptyList()));
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenListHasSingleElement() {
+        Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(Collections.singletonList(1)));
+    }
 }
