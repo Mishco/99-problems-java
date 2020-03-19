@@ -1,6 +1,7 @@
 package lists;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Class for finding the K-th element in list.
@@ -18,6 +19,10 @@ public final class P03 {
      * @return item
      */
     public static <T> T kth(final List<T> numbers, final int i) {
-        return numbers.get(i);
+        if (numbers.isEmpty()) {
+            throw new NoSuchElementException("Empty list");
+        }
+        if (i >= 0) return numbers.get(i);
+        else throw new NoSuchElementException("Invalid index");
     }
 }
