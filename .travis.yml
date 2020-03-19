@@ -3,7 +3,6 @@ language: java
 dist: trusty
 jdk:
   - openjdk11
-secure: "F5cwniXeEcPjli/7AIet/g5C5Gxp+HbIKHL4mvdAr8dJwtLgo3YFaLTLS8Zn6Wig347VTeZOk73T+j66Hv92xGi6a8oS39oNac3clfGRT7qS73uvxSAJAozykuppMxtqb3Cc2lZuAQSLHLOmYJ5gAXIAHzS8fjgPZcZ1zxB3fwGyMKiWF1P4DSk0Xoy6sOWgzRlNwJic7d5N+PO/P6yCN7kiNdhFTGsp5YL/BZ7ZtQHquM4lKNqn1EE3r6xHLB2MutjDDjCgpjP/2O6Ima8jeJz/XY472Rwg/EgMI7sdr+hDb2csPo7XGgzJXNeCtmWkSUilqScvh4LabHsvVY70UabF2CH2rw0p+4TXRB7GUhieqf3no+KV432jX+CaLGTaOXLb4VpbB/4n2UeaQmT9v46WPQmt4q3paF30/K8CYq+avWVsfEbCrImZZw3koNzywWC36yN1/9b3G504WZkPg8NWOfdxUSZaQSwqkxkwLks9+3RkVebV9eNcn1pbOwvsxFUiil7pDxijBVzYpLYhUbOX2dXVZ0jGQZyyAJy8KLfdR/vscJxwJbFEDU7ZEEKECYdkFFmmV+0S9ablm8xBL8LaDaBd9U3m7f5VdgnfiDO2R2DFwQOoTOhvLjxqttH+QN/tKBv06A7EjsmLNgF5conizvC50AvRA8bPn1CD800="
 
 # would just use default install/script but the ./mvnw script errors on travis
 # obviously this only works for maven builds right now...
