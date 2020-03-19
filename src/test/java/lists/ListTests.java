@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -22,6 +23,12 @@ class ListTests {
     @Test
     public void shouldFindSecondLastElementFromAList() {
         List<Integer> numbers = asList(1, 2, 11, 4, 5, 8, 10, 6);
+        assertThat(P02.secondLast(numbers), is(equalTo(10)));
+    }
+
+    @Test
+    public void shouldFindSecondLastElementFromAnotherList() {
+        LinkedList<Integer> numbers = new LinkedList<>(asList(1, 2, 11, 4, 5, 8, 10, 6));
         assertThat(P02.secondLast(numbers), is(equalTo(10)));
     }
 

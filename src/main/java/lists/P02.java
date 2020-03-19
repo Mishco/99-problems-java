@@ -12,6 +12,8 @@ public final class P02 {
     }
 
     /**
+     * Find the second last item from a list.
+     *
      * @param numbers input list of items
      * @return second last item
      */
