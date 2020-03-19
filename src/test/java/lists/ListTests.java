@@ -40,8 +40,18 @@ class ListTests {
     }
 
     @Test
-    public void shouldFindKthElementFromAList() throws Exception {
+    public void shouldFindKthElementFromAList() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         assertThat(P03.kth(numbers, 2), is(equalTo(3)));
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenKthListIsEmpty() {
+        Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(Collections.emptyList(), 1));
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenKthIsInvalid() {
+        Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(Collections.singletonList(1), -1));
     }
 }

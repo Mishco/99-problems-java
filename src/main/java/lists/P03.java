@@ -12,11 +12,12 @@ public final class P03 {
 
     /**
      * Find the k-th item in list
+     *
      * @param numbers list of items
-     * @param i index of the item
+     * @param i       index of the item
      * @return item
      */
-    public static Object kth(final List<Integer> numbers, int i) {
+    public static <T> T kth(final List<T> numbers, final int i) {
         return numbers.get(i);
     }
 }
