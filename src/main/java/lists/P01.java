@@ -1,4 +1,4 @@
-/**
+/*
  * Classes with list manipulation.
  * <p>
  * These classes contain public static method with List methods.
