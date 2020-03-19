@@ -3,10 +3,7 @@ package lists;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -40,5 +37,11 @@ class ListTests {
     @Test
     public void shouldThrowExceptionWhenListHasSingleElement() {
         Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(Collections.singletonList(1)));
+    }
+
+    @Test
+    public void shouldFindKthElementFromAList() throws Exception {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        assertThat(P03.kth(numbers, 2), is(equalTo(3)));
     }
 }
