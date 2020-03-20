@@ -54,4 +54,16 @@ class ListTests {
     public void shouldThrowExceptionWhenKthIsInvalid() {
         Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(Collections.singletonList(1), -1));
     }
+
+    @Test
+    public void listOfEmptyListShouldBe0() {
+        int length = P04.length(Collections.emptyList());
+        assertThat(length, is(equalTo(0)));
+    }
+
+    @Test
+    public void shouldFindListOfNonEmptyList() {
+        assertThat(P04.length(Arrays.asList(1, 2, 3, 4, 5)), is(equalTo(5)));
+    }
+
 }
