@@ -1,6 +1,6 @@
 package lists;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,10 +19,7 @@ public class P05 {
      * @return reversed list
      */
     public static <T> List<T> reverse(List<T> numbers) {
-        List<T> result = new ArrayList<>();
-        for (int i = numbers.size() - 1; i >= 0; i--) {
-            result.add(numbers.get(i));
-        }
-        return result;
+        Collections.reverse(numbers);
+        return numbers;
     }
 }
