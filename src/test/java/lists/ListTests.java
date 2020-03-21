@@ -66,4 +66,9 @@ class ListTests {
         assertThat(P04.length(Arrays.asList(1, 2, 3, 4, 5)), is(equalTo(5)));
     }
 
+    @Test
+    public void shouldReverseAList() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        assertThat(P05.reverse(numbers), is(equalTo(Arrays.asList(5, 4, 3, 2, 1))));
+    }
 }
