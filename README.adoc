@@ -1,7 +1,6 @@
 = 99 Problems in Java
 :toc:
 :toclevels: 2
-:sectnums:
 
 == Overview
 
