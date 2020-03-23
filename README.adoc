@@ -47,8 +47,10 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 ==== link:/src/main/java/lists/P04.java[P04 - Find the number of elements of a list]
 
-==== P05 - Reverse a list
-==== P06 - Find out whether a list is a palindrome
+==== link:/src/main/java/lists/P05.java[P05 - Reverse a list]
+
+==== link:/src/main/java/lists/P06.java[P06 - Find out whether a list is a palindrome]
+
 ==== P07 - Flatten a nested list structure
 ==== P08 - Eliminate consecutive duplicates of list elements.
 ==== P09 - Pack consecutive duplicates of list elements into sublists
