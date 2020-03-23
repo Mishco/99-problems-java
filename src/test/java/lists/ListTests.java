@@ -9,6 +9,8 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ListTests {
 
@@ -70,5 +72,15 @@ class ListTests {
     public void shouldReverseAList() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         assertThat(P05.reverse(numbers), is(equalTo(Arrays.asList(5, 4, 3, 2, 1))));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenListIsPalindrome() {
+        assertTrue(P06.isPalindrome(Arrays.asList("x", "a", "m", "a", "x")));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenListIsNotPalindrome() {
+        assertFalse(P06.isPalindrome(Arrays.asList(1, 2, 3, 4, 5)));
     }
 }
