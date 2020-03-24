@@ -2,6 +2,8 @@ package lists;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Class for string manipulation
@@ -20,13 +22,15 @@ public final class P07 {
      * @param typeOfItem item type
      * @return single list of item
      */
-    public static List<String> flatten(List<Object> inputList, Class<String> typeOfItem) {
+    @SuppressWarnings("unchecked")
+    public static <T> List<T> flatten(final List<?> inputList, final Class<T> typeOfItem) {
         if (inputList.isEmpty()) {
             return Collections.emptyList();
         }
-        if (typeOfItem == null) {
-            throw new ClassCastException("Type of item is not valid");
-        }
-        return Collections.emptyList();
+        return inputList.stream()
+                .flatMap(obj -> obj instanceof List ? flatten(((List<?>) obj), typeOfItem).stream() : Stream.of(obj))
+                .map(obj -> (T) obj)
+                .collect(Collectors.toList());
+
     }
 }
