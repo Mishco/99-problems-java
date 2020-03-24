@@ -33,7 +33,6 @@ class P06Test {
         listOfArguments.add(Arguments.of(Arrays.asList("b", "a", "b")));
         listOfArguments.add(Arguments.of(Arrays.asList("b", "a", "a", "b")));
         listOfArguments.add(Arguments.of(Arrays.asList("a", "a", "a", "a", "a")));
-        listOfArguments.add(Arguments.of(Arrays.asList("Sator", "Arepo", "Tenet", "Opera", "Rotas")));
         return listOfArguments.stream();
     }
 
