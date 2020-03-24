@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 import static java.util.Arrays.asList;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -82,5 +82,25 @@ class ListTests {
     @Test
     public void shouldReturnFalseWhenListIsNotPalindrome() {
         assertFalse(P06.isPalindrome(Arrays.asList(1, 2, 3, 4, 5)));
+    }
+
+    @Test
+    public void shouldFlattenAListOfList() {
+        List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", "d")), "e"), String.class);
+        assertThat(flatten, hasSize(5));
+        assertThat(flatten, hasItems("a", "b", "c", "d", "e"));
+    }
+
+    @Test
+    public void shouldFlattenDeepNestedLists()  {
+        List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", asList("d", "e", asList("f", "g"))), "h")), String.class);
+        assertThat(flatten, hasSize(8));
+        assertThat(flatten, hasItems("a", "b", "c", "d", "e", "f", "g", "h"));
+    }
+
+    @Test
+    public void shouldReturnEmptyListWhenTryingToFlattenAnEmptyList()  {
+        List<String> flatten = P07.flatten(Collections.emptyList(), String.class);
+        assertTrue(flatten.isEmpty());
     }
 }
