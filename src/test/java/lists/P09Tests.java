@@ -10,8 +10,9 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasSize;
 
 public class P09Tests {
+
     @Test
-    public void shouldReturnAListWithTwoListElementsWhenAListWithTwoUniqueElementsIsPassed() throws Exception {
+    public void shouldReturnAListWithTwoListElementsWhenAListWithTwoUniqueElementsIsPassed() {
         List<List<String>> packedList = P09.pack(Arrays.asList("a", "b"));
         assertThat(packedList, hasSize(2));
         assertThat(packedList.get(0), contains("a"));
@@ -19,7 +20,7 @@ public class P09Tests {
     }
 
     @Test
-    public void shouldPackConsecutiveDuplicatesInTheirOwnLists() throws Exception {
+    public void shouldPackConsecutiveDuplicatesInTheirOwnLists() {
         List<List<String>> packedList = P09.pack(Arrays.asList("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"));
         assertThat(packedList, hasSize(6));
         assertThat(packedList.get(0), contains("a", "a", "a", "a"));
