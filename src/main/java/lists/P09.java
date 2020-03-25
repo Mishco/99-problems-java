@@ -1,5 +1,6 @@
 package lists;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,6 +23,6 @@ public final class P09 {
      * @return list of separated sublist of repeated elements
      */
     public static <T> List<List<T>> pack(List<T> inputList) {
-        return null;
+        return Arrays.asList(inputList);
     }
 }
