@@ -1,13 +1,16 @@
 package lists;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class P09Tests {
 
@@ -31,4 +34,13 @@ public class P09Tests {
         assertThat(packedList.get(5), contains("e", "e", "e", "e"));
     }
 
+    @Test
+    public void shouldThrowNull() {
+        Assertions.assertThrows(NullPointerException.class, () -> P09.pack(null));
+    }
+
+    @Test
+    public void shouldNotBeEmpty() {
+        assertTrue(P09.pack(Collections.emptyList()).isEmpty());
+    }
 }

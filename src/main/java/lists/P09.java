@@ -1,7 +1,8 @@
 package lists;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class for pack list contains repeated elements they should be placed in separate sublists.
@@ -23,6 +24,23 @@ public final class P09 {
      * @return list of separated sublist of repeated elements
      */
     public static <T> List<List<T>> pack(List<T> inputList) {
-        return Arrays.asList(inputList);
+        Objects.requireNonNull(inputList, "List must be not null");
+
+        if (inputList.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        List<List<T>> resultList = new ArrayList<>();
+        List<T> sublist = new ArrayList<>();
+        T last = null;
+        for (T act : inputList) {
+            if (!act.equals(last)) {
+                sublist = new ArrayList<>();
+                resultList.add(sublist);
+            }
+            sublist.add(act);
+            last = act;
+        }
+        return resultList;
     }
 }
