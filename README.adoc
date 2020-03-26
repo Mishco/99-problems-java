@@ -51,9 +51,12 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 ==== link:/src/main/java/lists/P06.java[P06 - Find out whether a list is a palindrome]
 
-==== P07 - Flatten a nested list structure
-==== P08 - Eliminate consecutive duplicates of list elements.
-==== P09 - Pack consecutive duplicates of list elements into sublists
+==== link:/src/main/java/lists/P07.java[P07 - Flatten a nested list structure]
+
+==== link:/src/main/java/lists/P08.java[P08 - Eliminate consecutive duplicates of list elements.]
+
+==== link:/src/main/java/lists/P09.java[P09 - Pack consecutive duplicates of list elements into sublists]
+
 ==== P10 - Run-length encoding of a list.
 ==== P11 - Modified run-length encoding.
 ==== P12 - Decode a run-length encoded list.
