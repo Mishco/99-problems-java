@@ -1,10 +1,7 @@
 package lists;
 
-import java.util.AbstractMap;
 import java.util.AbstractMap.SimpleEntry;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
@@ -28,17 +25,10 @@ public class P11 {
      * Encode modified
      *
      * @param list input list of items
-     * @param <T>  type of item
      * @return encoded list, only elements
      */
-    public static <T> List<T> encode_modified(List<T> list) {
-        List<SimpleEntry<Integer, T>> simpleEntryList = P09.pack(list)
-                .stream()
-                .map(subList -> new SimpleEntry<>(subList.size(), subList.get(0)))
-                .collect(toList());
-
-
-        List<Object> encodedModifiedList = P09.pack(list)
+    public static List<Object> encodeModified(List<Object> list) {
+        return P09.pack(list)
                 .stream()
                 .map(sublist -> {
                     if (sublist.size() == 1) {
@@ -48,7 +38,5 @@ public class P11 {
                     }
                 })
                 .collect(toList());
-
-        return (List<T>) encodedModifiedList;
     }
 }

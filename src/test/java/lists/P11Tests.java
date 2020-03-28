@@ -16,7 +16,7 @@ public class P11Tests {
 
     @Test
     public void shouldEncodeAList() {
-        List<Object> encodedList = P11.encode_modified(Arrays.asList("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"));
+        List<Object> encodedList = P11.encodeModified(Arrays.asList("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"));
         assertThat(encodedList, hasSize(6));
         assertThat(encodedList.get(0), is(equalTo(new SimpleEntry<>(4, "a"))));
         assertThat(encodedList.get(1), is(equalTo("b")));
