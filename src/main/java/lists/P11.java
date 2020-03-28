@@ -4,6 +4,7 @@ import java.util.AbstractMap;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
@@ -31,17 +32,23 @@ public class P11 {
      * @return encoded list, only elements
      */
     public static <T> List<T> encode_modified(List<T> list) {
-
         List<SimpleEntry<Integer, T>> simpleEntryList = P09.pack(list)
                 .stream()
                 .map(subList -> new SimpleEntry<>(subList.size(), subList.get(0)))
                 .collect(toList());
 
-        List<SimpleEntry<Integer, T>> onlyOnes = simpleEntryList
+
+        List<Object> encodedModifiedList = P09.pack(list)
                 .stream()
-                .filter(item -> item.getValue().equals(Integer.valueOf(1)))
+                .map(sublist -> {
+                    if (sublist.size() == 1) {
+                        return sublist.get(0);
+                    } else {
+                        return new SimpleEntry<>(sublist.size(), sublist.get(0));
+                    }
+                })
                 .collect(toList());
 
-        return (List<T>) onlyOnes;
+        return (List<T>) encodedModifiedList;
     }
 }
