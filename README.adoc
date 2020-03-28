@@ -81,11 +81,45 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === Arithmetic
 
-==== P29
+==== P29 - Determine whether a given integer number is prime.
+==== P30 - Determine the prime factors of a given positive integer.
+==== P31 - Determine the prime factors of a given positive integer (2).
+==== P32 - A list of prime numbers.
+==== P33 - Goldbach's conjecture.
+==== P34 - A list of Goldbach compositions.
+==== P35 - Determine the greatest common divisor of two positive integer numbers.
+==== P36 - Calculate Euler's totient function phi(m).
+==== P37 - Calculate Euler's totient function phi(m) (2).
+==== P38 - Compare the two methods of calculating Euler's totient function.
 
 === Logic and Codes
 
+==== P39 - Truth tables for logical expressions.
+==== P40 - Truth tables for logical expressions (2).
+==== P41 - Truth tables for logical expressions (3).
+==== P42 - Gray code.
+==== P43 - Huffman code.
+
 === Binary Tree
+
+==== P44 - Check whether a given term represents a binary tree
+==== P45 - Construct completely balanced binary trees
+==== P46 - Symmetric binary trees
+==== P47 - Binary search trees (dictionaries)
+==== P48 - Generate-and-test paradigm
+==== P49 - Construct height-balanced binary trees
+==== P50 - Construct height-balanced binary trees with a given number of nodes
+==== P51 - Count the leaves of a binary tree
+==== P52 - Collect the leaves of a binary tree in a list
+==== P53 - Collect the internal nodes of a binary tree in a list
+==== P54 - Collect the nodes at a given level in a list
+==== P55 - Construct a complete binary tree
+==== P56 - Layout a binary tree (1)
+==== P57 - Layout a binary tree (2)
+==== P58 - Layout a binary tree (3)
+==== P59 - A string representation of binary trees
+==== P60 - Preorder and inorder sequences of binary trees
+==== P61 - Dotstring representation of binary trees
 
 === Multiway Trees
 
