@@ -123,7 +123,24 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === Multiway Trees
 
+==== P62 - Check whether a given term represents a multiway tree
+==== P63 - Count the nodes of a multiway tree
+==== P64 - Tree construction from a node string
+==== P65 - Determine the internal path length of a tree
+==== P66 - Construct the bottom-up order sequence of the tree nodes
+==== P67 - Lisp-like tree representation
+
 === Graphs
+
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
+==== P67 - Lisp-like tree representation
 
 === Miscellaneous
 
