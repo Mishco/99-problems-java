@@ -132,17 +132,30 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === Graphs
 
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
-==== P67 - Lisp-like tree representation
+==== P68 - Conversions
+==== P69 - Path from one node to another one
+==== P70 - Cycle from a given node
+==== P71 - Construct all spanning trees
+==== P72 - Construct the minimal spanning tree
+==== P73 - Graph isomorphism
+==== P74 - Node degree and graph coloration
+==== P75 - Depth-first order graph traversal
+==== P76 - Connected components
+==== P77 - Bipartite graphs
+==== P78 - Generate K-regular simple graphs with N nodes
 
 === Miscellaneous
+
+==== P79 - Eight queens problem
+==== P80 - Knight's tour
+==== P81 - Von Koch's conjecture
+==== P82 - An arithmetic puzzle
+==== P83 - English number words
+==== P84 - Syntax checker
+==== P85 - Sudoku
+==== P86 - Nonograms
+==== P87 - Crossword puzzle
+
 
 
 
