@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Collections;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.contains;
@@ -29,5 +30,10 @@ public class P08Tests {
     @Test
     public void shouldNotBeNull() {
         Assertions.assertThrows(NullPointerException.class, () -> P08.compress(null));
+    }
+    
+    @Test
+    public void shouldNotBeEmpty() {
+        assertTrue(P08.compress(Collections.emptyList()).isEmpty());
     }
 }
