@@ -1,14 +1,15 @@
 package lists;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -44,5 +45,10 @@ class P06Test {
         listOfArguments.add(Arguments.of(Arrays.asList("a", "y", "a", "a", "a")));
         listOfArguments.add(Arguments.of(Arrays.asList("Sator", "Tenet", "Opera", "Rotas")));
         return listOfArguments.stream();
+    }
+
+    @Test
+    public void emptyList() {
+        Assertions.assertThrows(NoSuchElementException.class, () -> P06.isPalindrome(Collections.emptyList()));
     }
 }
