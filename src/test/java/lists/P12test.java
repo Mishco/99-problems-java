@@ -2,7 +2,6 @@ package lists;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.AbstractMap;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +12,7 @@ import static org.hamcrest.Matchers.hasSize;
 public class P12test {
 
     @Test
-    public void shouldDecodeEncodedList() throws Exception {
+    public void shouldDecodeEncodedList() {
         List<String> encoded = P12.decode(
                 Arrays.asList(
                         new SimpleEntry<>(4, "a"),
