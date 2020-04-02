@@ -59,9 +59,10 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 ==== link:/src/main/java/lists/P10.java[P10 - Run-length encoding of a list.]
 
-==== link:/src/main/java/lists/P10.java[P11 - Modified run-length encoding.]
+==== link:/src/main/java/lists/P11.java[P11 - Modified run-length encoding.]
 
-==== P12 - Decode a run-length encoded list.
+==== link:/src/main/java/lists/P12.java[P12 - Decode a run-length encoded list.]
+
 ==== P13 - Run-length encoding of a list (direct solution).
 ==== P14 - Duplicate the elements of a list.
 ==== P15 - Duplicate the elements of a list a given number of times.
