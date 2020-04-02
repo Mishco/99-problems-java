@@ -1,9 +1,9 @@
 package lists;
 
-import java.io.Serializable;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * Given a run-length code list generated as specified in problem P11.
@@ -22,14 +22,12 @@ public class P12 {
      * @param <T>  type of item
      * @return list of uncompressed list
      */
-    public static <T> List<T> decode(List<Serializable> list) {
+    public static <T> List<T> decode(List<Object> list) {
         List<Object> newList = new ArrayList<>();
 
         for (Object obj : list) {
             if (obj instanceof SimpleEntry) {
-                for (int i = 0; i < (int) ((SimpleEntry) obj).getKey(); i++) {
-                    newList.add(((SimpleEntry) obj).getValue());
-                }
+                IntStream.range(0, (Integer) ((SimpleEntry) obj).getKey()).mapToObj(i -> ((SimpleEntry) obj).getValue()).forEach(newList::add);
             } else {
                 newList.add(obj);
             }
