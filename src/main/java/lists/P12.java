@@ -16,7 +16,7 @@ public class P12 {
 
 
     /**
-     * Uncompressed list
+     * Uncompressed list of items
      *
      * @param list input list of items
      * @param <T>  type of item
@@ -27,7 +27,10 @@ public class P12 {
 
         for (Object obj : list) {
             if (obj instanceof SimpleEntry) {
-                IntStream.range(0, (Integer) ((SimpleEntry) obj).getKey()).mapToObj(i -> ((SimpleEntry) obj).getValue()).forEach(newList::add);
+                IntStream.range(0, (Integer) ((SimpleEntry) obj)
+                        .getKey())
+                        .mapToObj(i -> ((SimpleEntry) obj).getValue())
+                        .forEach(newList::add);
             } else {
                 newList.add(obj);
             }
