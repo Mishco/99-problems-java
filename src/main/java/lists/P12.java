@@ -1,7 +1,6 @@
 package lists;
 
 import java.io.Serializable;
-import java.util.AbstractMap;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,19 +23,18 @@ public class P12 {
      * @return list of uncompressed list
      */
     public static <T> List<T> decode(List<Serializable> list) {
-        ArrayList newList = new ArrayList<String>();
+        List<Object> newList = new ArrayList<>();
 
         for (Object obj : list) {
             if (obj instanceof SimpleEntry) {
-                int count  = (int) ((SimpleEntry) obj).getKey();
-                for (int i = 0; i < count; i++) {
+                for (int i = 0; i < (int) ((SimpleEntry) obj).getKey(); i++) {
                     newList.add(((SimpleEntry) obj).getValue());
                 }
             } else {
                 newList.add(obj);
             }
         }
-        return newList;
+        return (List<T>) newList;
     }
 
 }
