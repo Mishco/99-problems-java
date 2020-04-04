@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class P14 {
 
+    private P14() { }
+
     /**
      * @param list list items
      * @param <T>  type of item
