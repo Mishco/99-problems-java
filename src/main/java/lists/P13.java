@@ -26,7 +26,8 @@ public class P13 {
      * @param list list of items
      * @return list of simple entries
      */
-    public static <T> List<SimpleEntry<Integer, T>> encode_direct(List<String> list) {
+    @SuppressWarnings("unchecked")
+    public static <T> List<SimpleEntry<Integer, T>> encodeDirect(List<String> list) {
         return P09.pack(list)
                 .stream()
                 .map(sublist -> new SimpleEntry<>(sublist.size(), (T) sublist.get(0)))
