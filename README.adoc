@@ -65,8 +65,10 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 ==== link:/src/main/java/lists/P13.java[P13 - Run-length encoding of a list (direct solution).]
 
-==== P14 - Duplicate the elements of a list.
-==== P15 - Duplicate the elements of a list a given number of times.
+==== link:/src/main/java/lists/P14.java[P14 - Duplicate the elements of a list.]
+
+==== link:/src/main/java/lists/P15.java[P15 - Duplicate the elements of a list a given number of times.]
+
 ==== P16 - Drop every N'th element from a list.
 ==== P17 - Split a list into two parts; the length of the first part is given.
 ==== P18 - Extract a slice from a list.
