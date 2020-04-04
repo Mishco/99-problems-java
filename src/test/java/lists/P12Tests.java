@@ -9,7 +9,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 
-public class P12test {
+public class P12Tests {
 
     @Test
     public void shouldDecodeEncodedList() {
