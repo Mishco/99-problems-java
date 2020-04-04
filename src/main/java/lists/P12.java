@@ -22,9 +22,9 @@ public class P12 {
      * @param <T>  type of item
      * @return list of uncompressed list
      */
+    @SuppressWarnings("unchecked")
     public static <T> List<T> decode(List<Object> list) {
         List<Object> newList = new ArrayList<>();
-
         for (Object obj : list) {
             if (obj instanceof SimpleEntry) {
                 IntStream.range(0, (Integer) ((SimpleEntry) obj)
