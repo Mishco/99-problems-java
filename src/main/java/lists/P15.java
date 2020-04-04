@@ -1,5 +1,6 @@
 package lists;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +19,13 @@ public class P15 {
      * @param <T>  type of item.
      * @return duplicated list of items
      */
-    public static <T> List<T> duplicate(List<T> list, Integer i) {
-        return null;
+    public static <T> List<T> duplicate(List<T> list, Integer numberOfduplicate) {
+        List<T> newTList = new ArrayList<>();
+        for (T act : list) {
+            for (int j = 0; j < numberOfduplicate; j++) {
+                newTList.add(act);
+            }
+        }
+        return newTList;
     }
 }
