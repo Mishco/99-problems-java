@@ -19,7 +19,6 @@ public class P15 {
      * @return duplicated list of items
      */
     public static <T> List<T> duplicate(List<T> list, Integer i) {
-
         return null;
     }
 }
