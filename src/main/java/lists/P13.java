@@ -10,7 +10,6 @@ import static java.util.stream.Collectors.toList;
  * I.e. don't explicitly create the sublists containing the duplicates,
  * as in problem 1.09, but only count them. As in problem 1.11,
  * simplify the result list by replacing the singleton terms [1,X] by X.
- * </p>
  * Example:
  * ?- encode_direct([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
  * X = [[4,a],b,[2,c],[2,a],d,[4,e]]
@@ -24,6 +23,7 @@ public class P13 {
      * Encode direct all items
      *
      * @param list list of items
+     * @param <T>  type of item
      * @return list of simple entries
      */
     @SuppressWarnings("unchecked")

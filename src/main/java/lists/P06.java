@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 
 /**
  * Class for String manipulation.
- * </p>
  * Find the palindrome
  */
 public final class P06 {

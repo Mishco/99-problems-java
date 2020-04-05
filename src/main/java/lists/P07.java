@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 
 /**
  * Class for string manipulation
- * </p>
  * Flatten list of strings
  */
 public final class P07 {
@@ -20,6 +19,7 @@ public final class P07 {
      *
      * @param inputList  mixed lists of items
      * @param typeOfItem item type
+     * @param <T>        type of item
      * @return single list of item
      */
     @SuppressWarnings("unchecked")

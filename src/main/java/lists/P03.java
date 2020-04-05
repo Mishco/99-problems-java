@@ -16,6 +16,7 @@ public final class P03 {
      *
      * @param numbers list of items
      * @param i       index of the item
+     * @param <T>     type of item
      * @return item
      */
     public static <T> T kth(final List<T> numbers, final int i) {

@@ -7,7 +7,6 @@ import java.util.Objects;
 
 /**
  * Class for compress duplicates of list elements.
- * </p>
  * If a list contains repeated items, it should be replaced with single copy
  * of the element.
  * <pre>

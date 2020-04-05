@@ -9,7 +9,6 @@ import static java.util.stream.Collectors.toList;
  * Modify the result of problem 1.10 in such a way
  * that if an element has no duplicates it is simply copied into the result list.
  * Only elements with duplicates are transferred as [N,E] terms.
- * <p/>
  * <pre>
  * Example:
  * ?- encode_modified([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
