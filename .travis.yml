@@ -22,3 +22,5 @@ addons:
 script:
   - mvn test -Dsonar.skip=true
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
+  - mvn javadoc:javadoc
+
