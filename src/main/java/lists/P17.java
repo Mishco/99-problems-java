@@ -20,12 +20,10 @@ public final class P17 {
      * @return splitted list
      */
     public static <T> Map<Boolean, List<T>> split(final List<T> list, final int nth) {
-        Map map = new HashMap<Boolean, T>();
-        map.put(true,
-                IntStream.range(0, nth)
-                        .mapToObj(list::get)
-                        .collect(Collectors.toList())
-        );
+        Map<Boolean, List<T>> map = new HashMap<>();
+        map.put(true, IntStream.range(0, nth)
+                .mapToObj(list::get)
+                .collect(Collectors.toList()));
         map.put(false, IntStream.range(nth, list.size()).
                 mapToObj(list::get)
                 .collect(Collectors.toList()));
