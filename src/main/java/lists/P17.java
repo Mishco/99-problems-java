@@ -8,11 +8,10 @@ import java.util.Map;
 public class P17 {
 
     /**
-     *
-     * @param list
-     * @param nth
-     * @param <T>
-     * @return
+     * @param list list to split
+     * @param nth  point of split
+     * @param <T>  type of item in list
+     * @return splitted list
      */
     public static <T> Map<Boolean, List<T>> split(List<T> list, int nth) {
         List<T> firstLi = new ArrayList<>();
