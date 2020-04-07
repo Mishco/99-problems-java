@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.contains;
 public class P17Tests {
 
     @Test
-    public void shouldSplitInTwoHalves() throws Exception {
+    public void shouldSplitInTwoHalves() {
         Map<Boolean, List<String>> result = P17.split(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "k"), 3);
         assertThat(result.get(true), contains("a", "b", "c"));
         assertThat(result.get(false), contains("d", "e", "f", "g", "h", "i", "k"));
