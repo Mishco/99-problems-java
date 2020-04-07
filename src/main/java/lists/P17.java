@@ -1,11 +1,17 @@
 package lists;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class P17 {
+public final class P17 {
+
+    private P17() {
+
+    }
+
 
     /**
      * @param list list to split
@@ -13,18 +19,16 @@ public class P17 {
      * @param <T>  type of item in list
      * @return splitted list
      */
-    public static <T> Map<Boolean, List<T>> split(List<T> list, int nth) {
-        List<T> firstLi = new ArrayList<>();
-        List<T> secondList = new ArrayList<>();
-        for (int i = 0; i < nth; i++) {
-            firstLi.add(list.get(i));
-        }
-        for (int i = nth; i < list.size(); i++) {
-            secondList.add(list.get(i));
-        }
-        Map map = new HashMap();
-        map.put(true, firstLi);
-        map.put(false, secondList);
+    public static <T> Map<Boolean, List<T>> split(final List<T> list, final int nth) {
+        Map map = new HashMap<Boolean, T>();
+        map.put(true,
+                IntStream.range(0, nth)
+                        .mapToObj(list::get)
+                        .collect(Collectors.toList())
+        );
+        map.put(false, IntStream.range(nth, list.size()).
+                mapToObj(list::get)
+                .collect(Collectors.toList()));
         return map;
     }
 }
