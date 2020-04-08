@@ -6,6 +6,9 @@ import java.util.List;
 public class P18 {
 
 
+    private P18() {
+    }
+
     public static <T> List<T> slice(List<T> list, int from, int until) {
         List<T> innerList = new ArrayList<>();
 
