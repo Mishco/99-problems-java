@@ -6,6 +6,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Class for split list.
+ */
 public final class P17 {
 
     private P17() {
@@ -14,6 +17,8 @@ public final class P17 {
 
 
     /**
+     * Split one list of items into two sublist.
+     *
      * @param list list to split
      * @param nth  point of split
      * @param <T>  type of item in list
