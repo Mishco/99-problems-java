@@ -1,20 +1,30 @@
 package lists;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class P18 {
+/**
+ * Get sublist from list
+ */
+public final class P18 {
 
 
     private P18() {
     }
 
-    public static <T> List<T> slice(List<T> list, int from, int until) {
-        List<T> innerList = new ArrayList<>();
-
-        for (int i = from - 1; i < until; i++) {
-            innerList.add(list.get(i));
-        }
-        return innerList;
+    /**
+     * Get slice from list.
+     *
+     * @param list  list of items
+     * @param from  first index from list
+     * @param until last index from list
+     * @param <T>   type of item
+     * @return sublist from list between first and last indices
+     */
+    public static <T> List<T> slice(final List<T> list, final int from, final int until) {
+        return IntStream.range(from - 1, until)
+                .mapToObj(list::get)
+                .collect(Collectors.toList());
     }
 }
