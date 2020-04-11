@@ -71,8 +71,10 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 ==== link:/src/main/java/lists/P16.java[P16 - Drop every N'th element from a list.]
 
-==== P17 - Split a list into two parts; the length of the first part is given.
-==== P18 - Extract a slice from a list.
+==== link:/src/main/java/lists/P17.java[P17 - Split a list into two parts; the length of the first part is given.]
+
+==== link:/src/main/java/lists/P18.java[P18 - Extract a slice from a list.]
+
 ==== P19 - Rotate a list N places to the left.
 ==== P20 - Remove the K'th element from a list.
 ==== P21 - Insert an element at a given position into a list.
