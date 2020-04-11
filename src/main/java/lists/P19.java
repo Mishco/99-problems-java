@@ -23,13 +23,12 @@ public final class P19 {
             return list;
         }
         if (countOfItems > 0) {
-            Map<Boolean, List<T>> booleanListMap = P17.split(list, countOfItems);
-            List<T> firstPart = booleanListMap.get(false);
-            List<T> secondPart = booleanListMap.get(true);
-
-            return Stream.concat(firstPart.stream(), secondPart.stream()).collect(Collectors.toList());
+            return extractAndContactList(P17.split(list, countOfItems));
         }
-        Map<Boolean, List<T>> booleanListMap = P17.split(list, countOfItems + list.size());
+        return extractAndContactList(P17.split(list, countOfItems + list.size()));
+    }
+
+    private static <T> List<T> extractAndContactList(Map<Boolean, List<T>> booleanListMap) {
         List<T> firstPart = booleanListMap.get(false);
         List<T> secondPart = booleanListMap.get(true);
 
