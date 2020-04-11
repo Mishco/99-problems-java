@@ -24,7 +24,7 @@ public class P19 {
             firstPart.addAll(secondPart);
             return firstPart;
         }
-        Map<Boolean, List<T>> booleanListMap = P17.split(list, abs(countOfItems));
+        Map<Boolean, List<T>> booleanListMap = P17.split(list, countOfItems + list.size());
         List<T> firstPart = booleanListMap.get(false);
         List<T> secondPart = booleanListMap.get(true);
 
