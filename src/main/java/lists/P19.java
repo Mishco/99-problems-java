@@ -5,6 +5,14 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Examples:
+ * ?- rotate([a,b,c,d,e,f,g,h],3,X).
+ * X = [d,e,f,g,h,a,b,c]
+ * <p>
+ * ?- rotate([a,b,c,d,e,f,g,h],-2,X).
+ * X = [g,h,a,b,c,d,e,f]
+ */
 public final class P19 {
 
     private P19() {
