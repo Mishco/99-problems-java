@@ -5,14 +5,20 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.lang.Math.abs;
-
-public class P19 {
+public final class P19 {
 
     private P19() {
     }
 
-    public static <T> List<T> rotate(List<T> list, int countOfItems) {
+    /**
+     * Rotate list of item.
+     *
+     * @param list         list of item
+     * @param countOfItems how many items will be rotate
+     * @param <T>          type of item
+     * @return rotated list
+     */
+    public static <T> List<T> rotate(final List<T> list, final int countOfItems) {
         if (countOfItems == 0) {
             return list;
         }
@@ -21,8 +27,7 @@ public class P19 {
             List<T> firstPart = booleanListMap.get(false);
             List<T> secondPart = booleanListMap.get(true);
 
-            firstPart.addAll(secondPart);
-            return firstPart;
+            return Stream.concat(firstPart.stream(), secondPart.stream()).collect(Collectors.toList());
         }
         Map<Boolean, List<T>> booleanListMap = P17.split(list, countOfItems + list.size());
         List<T> firstPart = booleanListMap.get(false);
