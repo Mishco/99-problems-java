@@ -2,8 +2,23 @@ package lists;
 
 import java.util.List;
 
-public class P22 {
-    public static List<Integer> range(final int firstIdx, int secondIdx) {
+/**
+ * Class for range list.
+ */
+public final class P22 {
+
+    private P22() {
+    }
+
+    /**
+     * Create range list.
+     *
+     * @param firstIdx
+     * @param secondIdx
+     * @return
+     */
+    public static List<Integer> range(final int firstIdx,
+                                      final int secondIdx) {
         return null;
     }
 }
