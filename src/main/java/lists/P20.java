@@ -2,6 +2,9 @@ package lists;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
+
+import static java.util.stream.IntStream.rangeClosed;
 
 /**
  * Remove the n-th item from a list.
@@ -28,13 +31,14 @@ public class P20 {
         Object[] objects = new Object[2];
         List<T> tempList = new ArrayList<>();
 
-        for (int j = 0; j <= list.size() - 1; j++) {
+        int bound = list.size() - 1;
+        rangeClosed(0, bound).forEach(j -> {
             if (j == i - 1) {
                 objects[1] = list.get(j);
             } else {
                 tempList.add(list.get(j));
             }
-        }
+        });
         objects[0] = tempList;
         return objects;
     }
