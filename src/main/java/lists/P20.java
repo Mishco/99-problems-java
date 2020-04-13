@@ -28,14 +28,8 @@ public class P20 {
         Object[] objects = new Object[2];
         List<T> tempList = new ArrayList<>();
 
-        // a b c d
-        // 0 1 2 3
-
-        // removeAt(2)
-        // a c d
-        int index = i - 1;
         for (int j = 0; j <= list.size() - 1; j++) {
-            if (j == index) {
+            if (j == i - 1) {
                 objects[1] = list.get(j);
             } else {
                 tempList.add(list.get(j));
