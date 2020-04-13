@@ -1,8 +1,7 @@
 package lists;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 import static java.util.stream.IntStream.rangeClosed;
 
@@ -29,17 +28,13 @@ public class P20 {
      */
     public static <T> Object[] removeAt(final List<T> list, final int i) {
         Object[] objects = new Object[2];
-        List<T> tempList = new ArrayList<>();
 
-        int bound = list.size() - 1;
-        rangeClosed(0, bound).forEach(j -> {
-            if (j == i - 1) {
-                objects[1] = list.get(j);
-            } else {
-                tempList.add(list.get(j));
-            }
-        });
-        objects[0] = tempList;
+        objects[1] = list.get(i - 1);
+        objects[0] = rangeClosed(0, list.size() - 1)
+                .filter(j -> j != i - 1)
+                .mapToObj(list::get)
+                .collect(Collectors.toList());
+    
         return objects;
     }
 }
