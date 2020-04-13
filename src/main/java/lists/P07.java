@@ -29,8 +29,8 @@ public final class P07 {
         }
         return inputList.stream()
                 .flatMap(obj -> obj instanceof List ? flatten(((List<?>) obj))
-                        .stream() :
-                        Stream.of(obj))
+                        .stream()
+                        : Stream.of(obj))
                 .map(obj -> (T) obj)
                 .collect(Collectors.toList());
 

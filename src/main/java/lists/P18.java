@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * Get sublist from list
+ * Get sublist from list.
  */
 public final class P18 {
 

@@ -13,14 +13,15 @@ public final class P16 {
     }
 
     /**
-     * Remove every i-th item from list
+     * Remove every i-th item from list.
      *
      * @param list list of items
      * @param nth  i-th integer value
      * @param <T>  type of item
      * @return updated list
      */
-    public static <T> List<T> dropEveryNth(final List<T> list, final Integer nth) {
+    public static <T> List<T> dropEveryNth(final List<T> list,
+                                           final Integer nth) {
         if (nth > list.size() || nth <= 0) {
             return list;
         }
