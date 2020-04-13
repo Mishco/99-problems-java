@@ -24,7 +24,8 @@ public final class P17 {
      * @param <T>  type of item in list
      * @return splitted list
      */
-    public static <T> Map<Boolean, List<T>> split(final List<T> list, final int nth) {
+    public static <T> Map<Boolean, List<T>> split(final List<T> list,
+                                                  final int nth) {
         Map<Boolean, List<T>> map = new HashMap<>();
         map.put(true, IntStream.range(0, nth)
                 .mapToObj(list::get)

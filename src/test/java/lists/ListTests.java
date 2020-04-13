@@ -86,21 +86,21 @@ class ListTests {
 
     @Test
     public void shouldFlattenAListOfList() {
-        List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", "d")), "e"), String.class);
+        List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", "d")), "e"));
         assertThat(flatten, hasSize(5));
         assertThat(flatten, hasItems("a", "b", "c", "d", "e"));
     }
 
     @Test
     public void shouldFlattenDeepNestedLists()  {
-        List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", asList("d", "e", asList("f", "g"))), "h")), String.class);
+        List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", asList("d", "e", asList("f", "g"))), "h")));
         assertThat(flatten, hasSize(8));
         assertThat(flatten, hasItems("a", "b", "c", "d", "e", "f", "g", "h"));
     }
 
     @Test
     public void shouldReturnEmptyListWhenTryingToFlattenAnEmptyList()  {
-        List<String> flatten = P07.flatten(Collections.emptyList(), String.class);
+        List<String> flatten = P07.flatten(Collections.emptyList());
         assertTrue(flatten.isEmpty());
     }
 }

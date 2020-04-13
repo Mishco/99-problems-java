@@ -15,7 +15,7 @@ import static java.util.stream.IntStream.rangeClosed;
  * X = b
  * R = [a,c,d]
  */
-public class P20 {
+public final class P20 {
 
     private P20() {
     }

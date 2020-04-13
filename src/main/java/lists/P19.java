@@ -26,20 +26,24 @@ public final class P19 {
      * @param <T>          type of item
      * @return rotated list
      */
-    public static <T> List<T> rotate(final List<T> list, final int countOfItems) {
+    public static <T> List<T> rotate(final List<T> list,
+                                     final int countOfItems) {
         if (countOfItems == 0) {
             return list;
         }
         if (countOfItems > 0) {
             return extractAndContactList(P17.split(list, countOfItems));
         }
-        return extractAndContactList(P17.split(list, countOfItems + list.size()));
+        return extractAndContactList(P17.split(
+                list, countOfItems + list.size()));
     }
 
-    private static <T> List<T> extractAndContactList(Map<Boolean, List<T>> booleanListMap) {
+    private static <T> List<T> extractAndContactList(
+            final Map<Boolean, List<T>> booleanListMap) {
         List<T> firstPart = booleanListMap.get(false);
         List<T> secondPart = booleanListMap.get(true);
 
-        return Stream.concat(firstPart.stream(), secondPart.stream()).collect(Collectors.toList());
+        return Stream.concat(firstPart.stream(), secondPart.stream())
+                .collect(Collectors.toList());
     }
 }

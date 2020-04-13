@@ -12,7 +12,7 @@ public final class P03 {
     }
 
     /**
-     * Find the k-th item in list
+     * Find the k-th item in list.
      *
      * @param numbers list of items
      * @param i       index of the item
@@ -23,7 +23,11 @@ public final class P03 {
         if (numbers.isEmpty()) {
             throw new NoSuchElementException("Empty list");
         }
-        if (i >= 0) return numbers.get(i);
-        else throw new NoSuchElementException("Invalid index");
+        if (i >= 0) {
+            return numbers.get(i);
+        } else {
+            throw new NoSuchElementException("Invalid index");
+        }
+
     }
 }

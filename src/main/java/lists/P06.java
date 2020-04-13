@@ -20,7 +20,7 @@ public final class P06 {
      * @param <T>  type of item in input list
      * @return true if palindrome, false it not
      */
-    public static <T> boolean isPalindrome(List<T> list) {
+    public static <T> boolean isPalindrome(final List<T> list) {
         if (list.isEmpty()) {
             throw new NoSuchElementException("List is empty");
         }

@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Class for pack list contains repeated elements they should be placed in separate sublists.
+ * Class for pack list contains repeated elements
+ * they should be placed in separate sublist.
  * <pre>
  *  pack([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
  *  X = [[a,a,a,a],[b],[c,c],[a,a],[d],[e,e,e,e]]
@@ -23,7 +24,7 @@ public final class P09 {
      * @param <T>       type of item
      * @return list of separated sublist of repeated elements
      */
-    public static <T> List<List<T>> pack(List<T> inputList) {
+    public static <T> List<List<T>> pack(final List<T> inputList) {
         Objects.requireNonNull(inputList, "List must be not null");
 
         if (inputList.isEmpty()) {

@@ -3,7 +3,7 @@ package lists;
 import java.util.List;
 
 /**
- * Class for getting length of the list
+ * Class for getting length of the list.
  */
 public final class P04 {
 

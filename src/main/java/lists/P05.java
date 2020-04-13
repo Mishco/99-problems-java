@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class for reversing string.
  */
-public class P05 {
+public final class P05 {
 
     private P05() {
     }
@@ -18,7 +18,7 @@ public class P05 {
      * @param <T>     type of item in list
      * @return reversed list
      */
-    public static <T> List<T> reverse(List<T> numbers) {
+    public static <T> List<T> reverse(final List<T> numbers) {
         Collections.reverse(numbers);
         return numbers;
     }
