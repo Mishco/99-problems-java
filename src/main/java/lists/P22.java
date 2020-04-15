@@ -16,7 +16,7 @@ public final class P22 {
      *
      * @param firstIdx  first index
      * @param secondIdx second index
-     * @return
+     * @return list of integer in range
      */
     public static List<Integer> range(final int firstIdx,
                                       final int secondIdx) {
