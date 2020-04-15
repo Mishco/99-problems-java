@@ -1,5 +1,6 @@
 package lists;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,12 +14,17 @@ public final class P22 {
     /**
      * Create range list.
      *
-     * @param firstIdx
-     * @param secondIdx
+     * @param firstIdx  first index
+     * @param secondIdx second index
      * @return
      */
     public static List<Integer> range(final int firstIdx,
                                       final int secondIdx) {
-        return null;
+        List<Integer> resArr = new ArrayList<>();
+
+        for (int i = firstIdx; i <= secondIdx; i++) {
+            resArr.add(i);
+        }
+        return resArr;
     }
 }
