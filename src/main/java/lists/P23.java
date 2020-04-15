@@ -25,13 +25,14 @@ public final class P23 {
                                            final int count) {
         List<T> resArr = new ArrayList<>();
         for (int i = 1; i <= count; i++) {
-            Object[] objects = P20.removeAt(list, getRandomNumberInRange(list.size()));
+            Object[] objects = P20.removeAt(list,
+                    getRandomNumberInRange(list.size()));
             resArr.add((T) objects[1]);
         }
         return resArr;
     }
 
-    private static int getRandomNumberInRange(int max) {
+    private static int getRandomNumberInRange(final int max) {
         Random r = new SecureRandom();
         return r.nextInt((max - 1) + 1) + 1;
     }
