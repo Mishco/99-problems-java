@@ -2,8 +2,14 @@ package lists;
 
 import java.util.List;
 
-public class P24 {
-    public static List<Integer> randomSelect(int i, int i1, int i2) {
-        return null;
+import static lists.P22.range;
+
+public final class P24 {
+
+    public static List<Integer> randomSelect(final int count,
+                                             final int min,
+                                             final int max) {
+        List<Integer> integerList = range(min, max);
+        return P23.randomSelect(integerList, count);
     }
 }
