@@ -24,9 +24,11 @@ public final class P23 {
     public static <T> List<T> randomSelect(final List<T> list,
                                            final int count) {
         List<T> resArr = new ArrayList<>();
+        List<T> actLst = list;
         for (int i = 1; i <= count; i++) {
-            Object[] objects = P20.removeAt(list,
-                    getRandomNumberInRange(list.size()));
+            Object[] objects = P20.removeAt(actLst,
+                    getRandomNumberInRange(actLst.size()));
+            actLst = (List<T>) objects[0];
             resArr.add((T) objects[1]);
         }
         return resArr;

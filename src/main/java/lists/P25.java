@@ -4,6 +4,6 @@ import java.util.List;
 
 public class P25 {
     public static <T>List<T> randomPermutation(List<T> collect) {
-        return null;
+        return P23.randomSelect(collect, collect.size());
     }
 }
