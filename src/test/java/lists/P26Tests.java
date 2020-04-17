@@ -13,10 +13,26 @@ import static org.hamcrest.Matchers.hasSize;
 
 public class P26Tests {
     @Test
-    public void shouldFindAllCombinationsOfSize3FromAListWithSize6() throws Exception {
+    public void shouldFindAllCombinationsOfSize3FromAListWithSize6()  {
         List<String> input = Stream.of("a", "b", "c", "d", "e", "f").collect(toList());
         List<List<String>> combinations = P26.combinations(input, 3);
         assertThat(combinations, hasSize(20));
     }
 
+    /**
+     * ab
+     * ac
+     * ba
+     * bc
+     * ca
+     * cb
+     */
+    @Test
+    public void shouldFindAllCombinationWithoutRepeating() {
+        List<String> input = Stream.of("a", "b", "c", "d").collect(toList());
+        List<List<String>> combinations = P26.combinations(input, 3);
+        System.err.println(combinations);
+
+        assertThat(combinations, hasSize(4));
+    }
 }

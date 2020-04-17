@@ -4,7 +4,13 @@ import com.google.common.math.BigIntegerMath;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * In how many ways can a committee of 3 be chosen from a group of 12 people?
