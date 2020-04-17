@@ -25,14 +25,18 @@ public final class P26 {
     private P26() {
     }
 
-    public static <T> List<List<T>> combinations(List<T> input, int i) {
+    public static <T> List<List<T>> combinations(final List<T> input,
+                                                 final int i) {
         List<T> randomSelect = P23.randomSelect(input, i);
         List<List<T>> res = new ArrayList<>();
         // how many items will be in result ??? - math formula for that
         BigInteger binomial = BigIntegerMath.binomial(input.size(), i);
         // but we cannot know if result is not repeating
-        for (int j = 0; j < binomial.intValue(); j++) {
-            res.add(P25.randomPermutation(randomSelect));
+        while (res.size() != binomial.intValue()) {
+            List<T> permutation = P25.randomPermutation(randomSelect);
+            //if(!res.contains(permutation)) {
+                res.add(permutation);
+            //}
         }
         return res;
     }
