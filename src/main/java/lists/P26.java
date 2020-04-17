@@ -35,9 +35,24 @@ public final class P26 {
         while (res.size() != binomial.intValue()) {
             List<T> permutation = P25.randomPermutation(randomSelect);
             //if(!res.contains(permutation)) {
-                res.add(permutation);
+            res.add(permutation);
             //}
         }
         return res;
+
+//        Map<Boolean, List<T>> headAndTail = P17.split(input, 1);
+//        List<T> head = headAndTail.get(true);
+//        List<T> tail = headAndTail.get(false);
+//        List<List<T>> c1 = combinations(tail, (i - 1)).stream().map(e -> {
+//            List<T> l = new ArrayList<>();
+//            l.addAll(head);
+//            l.addAll(e);
+//            return l;
+//        }).collect(Collectors.toList());
+//        List<List<T>> c2 = combinations(tail, i);
+//        c1.addAll(c2);
+//        return c1;
+
+
     }
 }
