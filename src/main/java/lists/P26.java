@@ -59,6 +59,33 @@ public final class P26 {
 //        c1.addAll(c2);
 //        return c1;
 
+    }
 
+    public static <T> List<List<T>> combinationUtil(List<String> arr, List<String> data, int start,
+                                int end, int index, int r)
+    {
+        List<List<T>> res = new ArrayList<>();
+
+
+        // Current combination is ready to be printed, print it
+        if (index == r)
+        {
+            for (int j=0; j<r; j++)
+                System.out.print(data.get(j)+" ");
+                //res
+            System.out.println("");
+            return res;
+        }
+
+        // replace index with all possible elements. The condition
+        // "end-i+1 >= r-index" makes sure that including one element
+        // at index will make a combination with remaining elements
+        // at remaining positions
+        for (int i=start; i<=end && end-i+1 >= r-index; i++)
+        {
+            data.set(index, arr.get(i));
+            combinationUtil(arr, data, i+1, end, index+1, r);
+        }
+        return res;
     }
 }

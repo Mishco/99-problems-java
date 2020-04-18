@@ -29,10 +29,10 @@ public class P26Tests {
      */
     @Test
     public void shouldFindAllCombinationWithoutRepeating() {
-        List<String> input = Stream.of("a", "b", "c", "d").collect(toList());
-        List<List<String>> combinations = P26.combinations(input, 3);
-        System.err.println(combinations);
+        List<String> input = Stream.of("a", "b", "c", "d", "e", "f").collect(toList());
+        List<List<Object>> combinations = P26.combinationUtil(input, input, 0, input.size() - 1, 0, 3);
 
-        assertThat(combinations, hasSize(4));
+//        System.err.println(combinations);
+        assertThat(combinations, hasSize(20));
     }
 }
