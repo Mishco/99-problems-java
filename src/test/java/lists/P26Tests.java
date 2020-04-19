@@ -18,11 +18,4 @@ public class P26Tests {
         List<List<String>> combinations = P26.combinations(input, 3);
         assertThat(combinations, hasSize(20));
     }
-
-//    @Test
-//    public void shouldFindAllCombinationWithoutRepeating() {
-//        List<String> input = Stream.of("a", "b", "c", "d", "e", "f").collect(toList());
-//        List<String> combinations = P26.combinationUtil(input, input, 0, input.size() - 1, 0, 3);
-//        assertThat(combinations, hasSize(20));
-//    }
 }
