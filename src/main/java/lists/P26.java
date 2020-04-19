@@ -27,6 +27,14 @@ public final class P26 {
     private P26() {
     }
 
+    /**
+     * List of all combinations.
+     *
+     * @param input input list of items
+     * @param i     count of permuted items
+     * @param <T>   type of items
+     * @return result list of list
+     */
     public static <T> List<List<T>> combinations(final List<T> input,
                                                  final int i) {
         if (i == 1) {
@@ -51,6 +59,7 @@ public final class P26 {
                     l.addAll(e);
                     return l;
                 }).collect(toList());
+
         c1.addAll(combinations(second, i));
         return c1;
     }
