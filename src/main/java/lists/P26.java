@@ -4,13 +4,7 @@ import com.google.common.math.BigIntegerMath;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * In how many ways can a committee of 3 be chosen from a group of 12 people?
@@ -61,10 +55,10 @@ public final class P26 {
 
     }
 
-    public static <T> List<List<T>> combinationUtil(List<String> arr, List<String> data, int start,
-                                int end, int index, int r)
+    public static <T> List<String> combinationUtil(List<String> arr, List<String> data, int start,
+                                                   int end, int index, int r)
     {
-        List<List<T>> res = new ArrayList<>();
+//        List<List<T>> res = new ArrayList<>();
 
 
         // Current combination is ready to be printed, print it
@@ -74,7 +68,7 @@ public final class P26 {
                 System.out.print(data.get(j)+" ");
                 //res
             System.out.println("");
-            return res;
+            return data;
         }
 
         // replace index with all possible elements. The condition
@@ -86,6 +80,6 @@ public final class P26 {
             data.set(index, arr.get(i));
             combinationUtil(arr, data, i+1, end, index+1, r);
         }
-        return res;
+        return data;
     }
 }
