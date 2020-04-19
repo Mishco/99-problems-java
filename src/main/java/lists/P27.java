@@ -1,5 +1,6 @@
 package lists;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,12 +28,22 @@ import java.util.List;
  * a good book on discrete mathematics
  * under the term "multinomial coefficients".
  */
-public class P27 {
-    public static <T> List<List<List<T>>> group3(List<T> input) {
+public final class P27 {
+
+    private P27() {
+    }
+
+    public static <T> List<List<List<T>>> group3(final List<T> input) {
+
+        List<List<List<T>>> res = new ArrayList<>();
+
+        List<List<T>> listList = P26.combinations(input, 3);
+
         return null;
     }
 
-    public static <T> List<List<List<T>>> group(List<T> input, List<Integer> collect) {
+    public static <T> List<List<List<T>>> group(final List<T> input,
+                                                final List<Integer> collect) {
         return null;
     }
 }
