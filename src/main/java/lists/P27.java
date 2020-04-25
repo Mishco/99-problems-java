@@ -33,6 +33,11 @@ import static java.util.stream.Collectors.toList;
  */
 public final class P27 {
 
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    private static final int TWO = 2;
+    private static final int THIRD = 3;
+
     private P27() {
     }
 
@@ -53,16 +58,14 @@ public final class P27 {
      */
     public static <T> List<List<List<T>>> group3(final List<T> input) {
         List<List<List<T>>> result = new ArrayList<>();
-        for (List<T> combinationOf2 : P26.combinations(input, 2)) {
+        P26.combinations(input, TWO).forEach(combinationOf2 -> {
             List<T> r = remaining(input, combinationOf2);
-            for (List<T> combinationOf3 : P26.combinations(r, 3)) {
-                result.add(Stream.of(
-                        combinationOf2,
-                        combinationOf3,
-                        remaining(r, combinationOf3))
-                        .collect(toList()));
-            }
-        }
+            P26.combinations(r, THIRD).stream().map(combinationOf3 -> Stream.of(
+                    combinationOf2,
+                    combinationOf3,
+                    remaining(r, combinationOf3))
+                    .collect(toList())).forEach(result::add);
+        });
         return result;
     }
 
@@ -82,8 +85,8 @@ public final class P27 {
             lists.add(new ArrayList<>());
             return lists;
         }
-        int n = collect.get(0);
-        List<Integer> ns = collect.subList(1, collect.size());
+        int n = collect.get(ZERO);
+        List<Integer> ns = collect.subList(ONE, collect.size());
         for (List<T> c : P26.combinations(input, n)) {
             List<T> remaining = remaining(input, c);
             for (List<List<T>> cg : group(remaining, ns)) {
