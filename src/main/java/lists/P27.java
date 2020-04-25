@@ -53,12 +53,12 @@ public final class P27 {
      * @return list of items
      */
     public static <T> List<List<List<T>>> group3(final List<T> input) {
-        final int TWO = 2;
-        final int THIRD = 3;
+        final int two = 2;
+        final int third = 3;
         List<List<List<T>>> result = new ArrayList<>();
-        P26.combinations(input, TWO).forEach(combinationOf2 -> {
+        P26.combinations(input, two).forEach(combinationOf2 -> {
             List<T> r = remaining(input, combinationOf2);
-            P26.combinations(r, THIRD).stream().map(combinationOf3 -> Stream.of(
+            P26.combinations(r, third).stream().map(combinationOf3 -> Stream.of(
                     combinationOf2,
                     combinationOf3,
                     remaining(r, combinationOf3))
@@ -77,16 +77,16 @@ public final class P27 {
      */
     public static <T> List<List<List<T>>> group(final List<T> input,
                                                 final List<Integer> collect) {
-        final int ZERO = 0;
-        final int ONE = 1;
+        final int zero = 0;
+        final int one = 1;
         List<List<List<T>>> result = new ArrayList<>();
         if (collect.isEmpty()) {
             List<List<List<T>>> lists = new ArrayList<>();
             lists.add(new ArrayList<>());
             return lists;
         }
-        int n = collect.get(ZERO);
-        List<Integer> ns = collect.subList(ONE, collect.size());
+        int n = collect.get(zero);
+        List<Integer> ns = collect.subList(one, collect.size());
         List<List<T>> combinations = P26.combinations(input, n);
         combinations.forEach(c -> {
             List<T> remaining = remaining(input, c);
