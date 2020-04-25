@@ -67,11 +67,12 @@ public final class P27 {
     }
 
     /**
-     * Multinomial coefficients for inputed parameters
-     * @param input
-     * @param collect
-     * @param <T>
-     * @return
+     * Multinomial coefficients for input parameters
+     *
+     * @param input   input list of items
+     * @param collect list of parameters
+     * @param <T>     type of item
+     * @return list of items
      */
     public static <T> List<List<List<T>>> group(final List<T> input,
                                                 final List<Integer> collect) {
