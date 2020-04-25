@@ -33,10 +33,6 @@ import static java.util.stream.Collectors.toList;
  */
 public final class P27 {
 
-    private static final int ZERO = 0;
-    private static final int ONE = 1;
-    private static final int TWO = 2;
-    private static final int THIRD = 3;
 
     private P27() {
     }
@@ -57,6 +53,8 @@ public final class P27 {
      * @return list of items
      */
     public static <T> List<List<List<T>>> group3(final List<T> input) {
+        final int TWO = 2;
+        final int THIRD = 3;
         List<List<List<T>>> result = new ArrayList<>();
         P26.combinations(input, TWO).forEach(combinationOf2 -> {
             List<T> r = remaining(input, combinationOf2);
@@ -79,6 +77,8 @@ public final class P27 {
      */
     public static <T> List<List<List<T>>> group(final List<T> input,
                                                 final List<Integer> collect) {
+        final int ZERO = 0;
+        final int ONE = 1;
         List<List<List<T>>> result = new ArrayList<>();
         if (collect.isEmpty()) {
             List<List<List<T>>> lists = new ArrayList<>();
@@ -87,15 +87,16 @@ public final class P27 {
         }
         int n = collect.get(ZERO);
         List<Integer> ns = collect.subList(ONE, collect.size());
-        for (List<T> c : P26.combinations(input, n)) {
+        List<List<T>> combinations = P26.combinations(input, n);
+        combinations.forEach(c -> {
             List<T> remaining = remaining(input, c);
-            for (List<List<T>> cg : group(remaining, ns)) {
+            group(remaining, ns).forEach(cg -> {
                 List<List<T>> sg = new ArrayList<>();
                 sg.add(c);
                 sg.addAll(cg);
                 result.add(sg);
-            }
-        }
+            });
+        });
         return result;
     }
 }
