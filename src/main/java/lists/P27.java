@@ -45,7 +45,7 @@ public final class P27 {
     }
 
     /**
-     * Multinomial coefficients for parameters 2, 3.
+     * Multinomial coefficients for defined parameters.
      *
      * @param input input list
      * @param <T>   type of item
@@ -67,7 +67,7 @@ public final class P27 {
     }
 
     /**
-     * Multinomial coefficients for input parameters
+     * Multinomial coefficients for input parameters.
      *
      * @param input   input list of items
      * @param collect list of parameters
