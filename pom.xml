@@ -6,7 +6,7 @@
 
     <groupId>sk.mishco</groupId>
     <artifactId>99-problems</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>99-problems</name>
     <description>Short project for training Java skills on 99-problems.</description>
 
