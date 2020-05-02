@@ -1,7 +1,11 @@
 package lists;
 
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * We suppose that a list (InList) contains elements that are lists themselves.
@@ -18,17 +22,39 @@ public final class P28 {
     }
 
     /**
-     * Sort list by size of sublist
+     * Sort list by size of sublist.
      *
      * @param input input list of items
+     * @param <T>   type of item
      * @return sorted list
      */
-    public static List<List<String>> lsort(List<List<String>> input) {
+    public static <T> List<List<T>> lsort(final List<List<T>> input) {
         input.sort(Comparator.comparingInt(List::size));
         return input;
     }
 
-    public static List<List<String>> lfsort(List<List<String>> input) {
-        return null;
+    /**
+     * Sort list by frequency of sublist.
+     *
+     * @param input input list of items
+     * @param <T>   type of item
+     * @return sorted list
+     */
+    public static <T> List<List<T>> lfsort(final List<List<T>> input) {
+        Map<Integer, Integer> frequencies = new HashMap<>();
+        input.stream()
+                .map(List::size)
+                .forEach(l -> frequencies.put(
+                        l,
+                        frequencies.compute(l,
+                                (k, v) -> v == null
+                                        ? 1
+                                        : v + 1)));
+        return input
+                .stream()
+                .sorted(Comparator
+                        .comparingInt(xs -> frequencies.get(xs.size())))
+                .collect(toList());
+
     }
 }
