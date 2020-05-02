@@ -93,7 +93,7 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 ==== link:/src/main/java/lists/P27.java[P27 - Group the elements of a set into disjoint subsets.]
 
-==== P28 - Sorting a list of lists according to length of sublists
+==== link:/src/main/java/lists/P28.java[P28 - Sorting a list of lists according to length of sublists]
 
 === Arithmetic
 
