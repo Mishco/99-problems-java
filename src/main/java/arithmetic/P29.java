@@ -1,37 +1,40 @@
 package arithmetic;
 
 /**
- * Check prime number
+ * Check prime number.
  */
 public final class P29 {
+
+    public static final int ONE = 1;
+    public static final int FIRST_PRIME = 2;
+    public static final int SECOND_PRIME = 3;
+    public static final int THIRD_PRIME = 5;
+    public static final int GAP = 6;
 
     private P29() {
     }
 
     /**
      * A simple, but very inefficient primality test uses Wilson's theorem,
-     * which states that p is prime if and only if
-     * </p>
+     * which states that p is prime if and only if.
      *
      * @param n number for test
      * @return true if prime or not
      */
     public static boolean isPrime(int n) {
-        if (n <= 3) {
-            return n > 1;
-        } else if (n % 2 == 0 || n % 3 == 0) {
+        if (n <= SECOND_PRIME) {
+            return n > ONE;
+        } else if (n % FIRST_PRIME == 0 || n % SECOND_PRIME == 0) {
             return false;
         }
-
-        int i = 5;
+        int i = THIRD_PRIME;
 
         while (i * i <= n) {
-            if (n % i == 0 || n % (i + 2) == 0) {
+            if (n % i == 0 || n % (i + FIRST_PRIME) == 0) {
                 return false;
             }
-            i = i + 6;
+            i = i + GAP;
         }
-
         return true;
     }
 }
