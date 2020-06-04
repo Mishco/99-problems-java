@@ -1,6 +1,8 @@
 package arithmetic;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -19,4 +21,9 @@ class P29Test {
         assertFalse(prime);
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29})
+    public void firstTenPrimeNumbers(int n) {
+        assertTrue(P29.isPrime(n));
+    }
 }
