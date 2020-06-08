@@ -5,11 +5,6 @@ package arithmetic;
  */
 public final class P29 {
 
-    public static final int ONE = 1;
-    public static final int FIRST_PRIME = 2;
-    public static final int SECOND_PRIME = 3;
-    public static final int THIRD_PRIME = 5;
-    public static final int GAP = 6;
 
     private P29() {
     }
@@ -21,19 +16,25 @@ public final class P29 {
      * @param n number for test
      * @return true if prime or not
      */
-    public static boolean isPrime(int n) {
-        if (n <= SECOND_PRIME) {
-            return n > ONE;
-        } else if (n % FIRST_PRIME == 0 || n % SECOND_PRIME == 0) {
+    public static boolean isPrime(final int n) {
+        final int one = 1;
+        final int firstPrime = 2;
+        final int secondPrime = 3;
+        final int thirdPrime = 5;
+        final int gap = 6;
+
+        if (n <= secondPrime) {
+            return n > one;
+        } else if (n % firstPrime == 0 || n % secondPrime == 0) {
             return false;
         }
-        int i = THIRD_PRIME;
+        int i = thirdPrime;
 
         while (i * i <= n) {
-            if (n % i == 0 || n % (i + FIRST_PRIME) == 0) {
+            if (n % i == 0 || n % (i + firstPrime) == 0) {
                 return false;
             }
-            i = i + GAP;
+            i = i + gap;
         }
         return true;
     }
