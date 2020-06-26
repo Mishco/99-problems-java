@@ -35,8 +35,7 @@ cache:
     - mvn test -Dsonar.skip=true
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
     - mvn javadoc:javadoc
-  except:
-    - master
+
 
 # To deploy packages from CI, create a ci_settings.xml file
 # For deploying packages to GitLab's Maven Repository: See https://docs.gitlab.com/ee/user/project/packages/maven_repository.html#creating-maven-packages-with-gitlab-cicd for more details.
