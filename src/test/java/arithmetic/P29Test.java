@@ -22,8 +22,14 @@ class P29Test {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29})
+    @ValueSource(ints = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29})
     public void firstTenPrimeNumbers(int n) {
         assertTrue(P29.isPrime(n));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 4, 6, 8, 10 })
+    public void firstTenNonPrimeNumbers(int n) {
+        assertFalse(P29.isPrime(n));
     }
 }
