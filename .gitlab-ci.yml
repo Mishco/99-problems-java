@@ -1,6 +1,16 @@
-# This file is a template, and might need editing before it works on your project.
-test:
-  # Official docker image.
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  #SONAR_HOST_URL: ${SONAR_HOST_URL}
+  #SONAR_TOKEN: ${SONAR_TOKEN}
+
+build:
   image: maven:latest
   stage: build
   services:
@@ -9,6 +19,44 @@ test:
     - mvn install test -Dsonar.skip=true
     #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
     #- mvn javadoc:javadoc
+  artifacts:
+    paths:
+      - target/*.jar
+
+test_variable:
+  stage: test
+  script:
+    - echo $CI_JOB_STAGE # calls a predefined variable
+    - echo $SONAR_TOKEN # calls a custom variable of type `env_var`
+    - echo $SONAR_HOST_URL # calls a custom variable of type `file` that contains the path to the temp file
+    - cat $SONAR_TOKEN # the temp file itself contains the variable value
+
+sonarcloud-check:
+  image: maven:latest
+  stage: test
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install verify sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+  only:
+    - merge_requests
+    - master
+    - develop
+
+#buildAndTest:
+#  stage: test
+#  image: maven:latest
+#  script:
+#    # cf2d34f1d9057621fa6a28fcd4b86d8604509df7
+#    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -Dsonar.skip=true
+#    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems -Dsonar.url=sonarcloud.io
+#    #- cat target/site/jacoco/index.html
+#    #- cat target/site/jacoco/index.html | grep -o 'Total[^%]*%' | sed -e 's/Total/Jacoco-Test-Coverage:/g'
+#  artifacts:
+#    paths:
+#      - target/*.jar
 
 
 # docker-build-master:
