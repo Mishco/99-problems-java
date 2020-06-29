@@ -7,8 +7,6 @@ variables:
   SPRING_PROFILES_ACTIVE: gitlab-ci
   SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
-  #SONAR_HOST_URL: ${SONAR_HOST_URL}
-  #SONAR_TOKEN: ${SONAR_TOKEN}
 
 build:
   image: maven:latest
@@ -27,9 +25,8 @@ test_variable:
   stage: test
   script:
     - echo $CI_JOB_STAGE # calls a predefined variable
-    - echo $SONAR_TOKEN # calls a custom variable of type `env_var`
     - echo $SONAR_HOST_URL # calls a custom variable of type `file` that contains the path to the temp file
-    - cat $SONAR_TOKEN # the temp file itself contains the variable value
+    - echo $SONAR_TOKEN # calls a custom variable of type `env_var`
 
 sonarcloud-check:
   image: maven:latest
