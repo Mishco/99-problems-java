@@ -5,9 +5,10 @@ services:
 variables:
   DOCKER_DRIVER: overlay
   SPRING_PROFILES_ACTIVE: gitlab-ci
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
 
-test:
-  # Official docker image.
+build:
   image: maven:latest
   stage: build
   services:
@@ -20,17 +21,32 @@ test:
     paths:
       - target/*.jar
 
-buildAndTest:
+sonarcloud-check:
+  image: maven:3.6.3-jdk-11
   stage: test
-  image: maven:latest
-  script:
-    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -Dsonar.skip=true
-    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
-    #- cat target/site/jacoco/index.html
-    #- cat target/site/jacoco/index.html | grep -o 'Total[^%]*%' | sed -e 's/Total/Jacoco-Test-Coverage:/g'
-  artifacts:
+  cache:
+    key: "${CI_JOB_NAME}"
     paths:
-      - target/*.jar
+      - .sonar/cache
+  script:
+    - mvn verify sonar:sonar
+  only:
+    - merge_requests
+    - master
+    - develop
+
+#buildAndTest:
+#  stage: test
+#  image: maven:latest
+#  script:
+#    # cf2d34f1d9057621fa6a28fcd4b86d8604509df7
+#    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -Dsonar.skip=true
+#    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems -Dsonar.url=sonarcloud.io
+#    #- cat target/site/jacoco/index.html
+#    #- cat target/site/jacoco/index.html | grep -o 'Total[^%]*%' | sed -e 's/Total/Jacoco-Test-Coverage:/g'
+#  artifacts:
+#    paths:
+#      - target/*.jar
 
 
 # docker-build-master:
