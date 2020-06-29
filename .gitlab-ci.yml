@@ -1,4 +1,11 @@
-# This file is a template, and might need editing before it works on your project.
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+
 test:
   # Official docker image.
   image: maven:latest
@@ -9,6 +16,21 @@ test:
     - mvn install test -Dsonar.skip=true
     #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
     #- mvn javadoc:javadoc
+  artifacts:
+    paths:
+      - target/*.jar
+
+buildAndTest:
+  stage: test
+  image: maven:latest
+  script:
+    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -Dsonar.skip=true
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
+    #- cat target/site/jacoco/index.html
+    #- cat target/site/jacoco/index.html | grep -o 'Total[^%]*%' | sed -e 's/Total/Jacoco-Test-Coverage:/g'
+  artifacts:
+    paths:
+      - target/*.jar
 
 
 # docker-build-master:
