@@ -16,6 +16,8 @@
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
+        <sonar.projectKey>Mishco_99-problems2</sonar.projectKey>
+        <sonar.organization>mishco</sonar.organization>
     </properties>
 
     <dependencies>
@@ -185,5 +187,6 @@
             </plugin>
         </plugins>
     </reporting>
+
 
 </project>
