@@ -29,7 +29,7 @@ sonarcloud-check:
     paths:
       - .sonar/cache
   script:
-    - mvn verify sonar:sonar
+    - mvn verify sonar:sonar -Dsonar.host.url="${SONAR_HOST_URL}"
   only:
     - merge_requests
     - master
