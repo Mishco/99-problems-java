@@ -30,7 +30,7 @@ sonarcloud-check:
       - .sonar/cache
   script:
     - echo $SONAR_HOST_URL
-    - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io
+    - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
   only:
     - merge_requests
     - master
