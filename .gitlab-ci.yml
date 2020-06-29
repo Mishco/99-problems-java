@@ -23,6 +23,14 @@ build:
     paths:
       - target/*.jar
 
+check:
+  image: maven:latest
+  stage: test
+  script:
+    - echo "${CI_COMMIT_MESSAGE}"
+    - echo ${SONAR_HOST_URL}
+    - echo ${SONAR_TOKEN}
+
 sonarcloud-check:
   image: maven:latest
   stage: test
