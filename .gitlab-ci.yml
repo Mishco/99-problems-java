@@ -7,6 +7,8 @@ variables:
   SPRING_PROFILES_ACTIVE: gitlab-ci
   SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  SONAR_HOST_URL: $SONAR_HOST_URL
+  SONAR_TOKEN: $SONAR_TOKEN
 
 build:
   image: maven:latest
@@ -29,7 +31,6 @@ sonarcloud-check:
     paths:
       - .sonar/cache
   script:
-    - echo $SONAR_HOST_URL
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install verify sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
   only:
     - merge_requests
