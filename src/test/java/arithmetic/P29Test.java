@@ -26,4 +26,10 @@ class P29Test {
     public void firstTenPrimeNumbers(int n) {
         assertTrue(P29.isPrime(n));
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 4, 6, 8, 10 })
+    public void firstTenNonPrimeNumbers(int n) {
+        assertFalse(P29.isPrime(n));
+    }
 }
