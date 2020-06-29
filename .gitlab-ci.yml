@@ -30,6 +30,9 @@ check:
     - echo "${CI_COMMIT_MESSAGE}"
     - echo ${SONAR_HOST_URL}
     - echo ${SONAR_TOKEN}
+    - echo "$CI_REGISTRY_USER"
+    - echo "$SONAR_HOST_URL"
+    - echo "$SONAR_TOKEN"
 
 sonarcloud-check:
   image: maven:latest
