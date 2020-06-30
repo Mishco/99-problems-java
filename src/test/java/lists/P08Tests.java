@@ -12,7 +12,7 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class P08Tests {
+class P08Tests {
 
     @Test
     void shouldRemoveConsecutiveDuplicatesInAList() {

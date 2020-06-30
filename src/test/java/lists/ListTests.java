@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ListTests {
+class ListTests {
 
     @Test
     void shouldFindLastElementFromAListOfAlphabets() {
