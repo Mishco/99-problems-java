@@ -33,12 +33,14 @@ class ListTests {
 
     @Test
     public void shouldThrowExceptionWhenListEmpty() {
-        Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(Collections.emptyList()));
+        final List<Integer> emptyList = Collections.emptyList();
+        Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(emptyList));
     }
 
     @Test
     public void shouldThrowExceptionWhenListHasSingleElement() {
-        Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(Collections.singletonList(1)));
+        final List<Integer> singletonList = Collections.singletonList(1);
+        Assertions.assertThrows(NoSuchElementException.class, () -> P02.secondLast(singletonList));
     }
 
     @Test
@@ -49,12 +51,14 @@ class ListTests {
 
     @Test
     public void shouldThrowExceptionWhenKthListIsEmpty() {
-        Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(Collections.emptyList(), 1));
+        final List<Integer> emptyList = Collections.emptyList();
+        Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(emptyList, 1));
     }
 
     @Test
     public void shouldThrowExceptionWhenKthIsInvalid() {
-        Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(Collections.singletonList(1), -1));
+        final var singletonList = Collections.singletonList(1);
+        Assertions.assertThrows(NoSuchElementException.class, () -> P03.kth(singletonList, -1));
     }
 
     @Test
@@ -92,14 +96,14 @@ class ListTests {
     }
 
     @Test
-    public void shouldFlattenDeepNestedLists()  {
+    public void shouldFlattenDeepNestedLists() {
         List<String> flatten = P07.flatten(asList("a", asList("b", asList("c", asList("d", "e", asList("f", "g"))), "h")));
         assertThat(flatten, hasSize(8));
         assertThat(flatten, hasItems("a", "b", "c", "d", "e", "f", "g", "h"));
     }
 
     @Test
-    public void shouldReturnEmptyListWhenTryingToFlattenAnEmptyList()  {
+    public void shouldReturnEmptyListWhenTryingToFlattenAnEmptyList() {
         List<String> flatten = P07.flatten(Collections.emptyList());
         assertTrue(flatten.isEmpty());
     }
