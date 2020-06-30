@@ -9,10 +9,10 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 
-public class P12Tests {
+class P12Tests {
 
     @Test
-    public void shouldDecodeEncodedList() {
+    void shouldDecodeEncodedList() {
         List<String> encoded = P12.decode(
                 Arrays.asList(
                         new SimpleEntry<>(4, "a"),

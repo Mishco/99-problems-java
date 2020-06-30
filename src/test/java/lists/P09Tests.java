@@ -12,10 +12,10 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class P09Tests {
+class P09Tests {
 
     @Test
-    public void shouldReturnAListWithTwoListElementsWhenAListWithTwoUniqueElementsIsPassed() {
+    void shouldReturnAListWithTwoListElementsWhenAListWithTwoUniqueElementsIsPassed() {
         List<List<String>> packedList = P09.pack(Arrays.asList("a", "b"));
         assertThat(packedList, hasSize(2));
         assertThat(packedList.get(0), contains("a"));
@@ -23,7 +23,7 @@ public class P09Tests {
     }
 
     @Test
-    public void shouldPackConsecutiveDuplicatesInTheirOwnLists() {
+    void shouldPackConsecutiveDuplicatesInTheirOwnLists() {
         List<List<String>> packedList = P09.pack(Arrays.asList("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"));
         assertThat(packedList, hasSize(6));
         assertThat(packedList.get(0), contains("a", "a", "a", "a"));
@@ -35,12 +35,12 @@ public class P09Tests {
     }
 
     @Test
-    public void shouldThrowNull() {
+    void shouldThrowNull() {
         Assertions.assertThrows(NullPointerException.class, () -> P09.pack(null));
     }
 
     @Test
-    public void shouldNotBeEmpty() {
+    void shouldNotBeEmpty() {
         assertTrue(P09.pack(Collections.emptyList()).isEmpty());
     }
 }
