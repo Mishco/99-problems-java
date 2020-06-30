@@ -12,17 +12,17 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class P18Tests {
+class P18Tests {
 
     @Test
-    public void shouldGiveSliceOfAList() {
+    void shouldGiveSliceOfAList() {
         List<String> slice = P18.slice(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "k"), 3, 7);
         assertThat(slice, hasSize(5));
         assertThat(slice, contains("c", "d", "e", "f", "g"));
     }
 
     @Test
-    public void shouldNotReturnNothingIndexOutOfSize() {
+    void shouldNotReturnNothingIndexOutOfSize() {
         List<String> slice = P18.slice(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "k"), 3, -2);
         assertTrue(slice.isEmpty());
     }

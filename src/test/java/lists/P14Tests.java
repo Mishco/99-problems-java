@@ -10,10 +10,10 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasSize;
 
 
-public class P14Tests {
+  class P14Tests {
 
     @Test
-    public void shouldDuplicateElementsInAList() {
+      void shouldDuplicateElementsInAList() {
         List<String> duplicates = P14.duplicate(Arrays.asList("a", "b", "c", "d"));
         assertThat(duplicates, hasSize(8));
         assertThat(duplicates, contains("a", "a", "b", "b", "c", "c", "d", "d"));
