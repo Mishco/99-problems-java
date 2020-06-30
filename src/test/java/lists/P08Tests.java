@@ -12,29 +12,29 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class P08Tests {
+class P08Tests {
 
     @Test
-    public void shouldRemoveConsecutiveDuplicatesInAList() {
+    void shouldRemoveConsecutiveDuplicatesInAList() {
         List<String> compressedList = P08.compress(asList("a", "a", "a", "a", "b", "c", "c", "d", "e", "e", "e", "e"));
         assertThat(compressedList, hasSize(5));
         assertThat(compressedList, contains("a", "b", "c", "d", "e"));
     }
 
     @Test
-    public void shouldNotRemoveNonConsecutiveSimilarElementsFromAList() {
+    void shouldNotRemoveNonConsecutiveSimilarElementsFromAList() {
         List<String> compressedList = P08.compress(asList("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"));
         assertThat(compressedList, hasSize(6));
         assertThat(compressedList, contains("a", "b", "c", "a", "d", "e"));
     }
 
     @Test
-    public void shouldNotBeNull() {
+    void shouldNotBeNull() {
         Assertions.assertThrows(NullPointerException.class, () -> P08.compress(null));
     }
-    
+
     @Test
-    public void shouldNotBeEmpty() {
+    void shouldNotBeEmpty() {
         assertTrue(P08.compress(Collections.emptyList()).isEmpty());
     }
 }
