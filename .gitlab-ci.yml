@@ -15,8 +15,6 @@ build:
     - docker:dind
   script:
     - mvn install test -Dsonar.skip=true
-    #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems
-    #- mvn javadoc:javadoc
   artifacts:
     paths:
       - target/*.jar
@@ -38,48 +36,5 @@ sonarcloud-check:
   script:
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install verify sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
   only:
-    - merge_requests
     - master
     - develop
-
-#buildAndTest:
-#  stage: test
-#  image: maven:latest
-#  script:
-#    # cf2d34f1d9057621fa6a28fcd4b86d8604509df7
-#    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -Dsonar.skip=true
-#    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mishco_99-problems -Dsonar.url=sonarcloud.io
-#    #- cat target/site/jacoco/index.html
-#    #- cat target/site/jacoco/index.html | grep -o 'Total[^%]*%' | sed -e 's/Total/Jacoco-Test-Coverage:/g'
-#  artifacts:
-#    paths:
-#      - target/*.jar
-
-
-# docker-build-master:
-#   # Official docker image.
-#   image: docker:latest
-#   stage: build
-#   services:
-#     - docker:dind
-#   before_script:
-#     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-#   script:
-#     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-#     - docker push "$CI_REGISTRY_IMAGE"
-#   only:
-#     - master
-
-# docker-build:
-#   # Official docker image.
-#   image: docker:latest
-#   stage: build
-#   services:
-#     - docker:dind
-#   before_script:
-#     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-#   script:
-#     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
-#     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
-#   except:
-#     - master
