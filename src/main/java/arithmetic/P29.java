@@ -3,7 +3,7 @@ package arithmetic;
 /**
  * Check prime number.
  */
-public final class P29 {
+  final class P29 {
 
 
     private P29() {
@@ -16,7 +16,7 @@ public final class P29 {
      * @param n number for test
      * @return true if prime or not
      */
-    public static boolean isPrime(final int n) {
+      static boolean isPrime(final int n) {
         final int one = 1;
         final int firstPrime = 2;
         final int secondPrime = 3;

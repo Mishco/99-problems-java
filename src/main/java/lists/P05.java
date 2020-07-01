@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class for reversing string.
  */
-public final class P05 {
+  final class P05 {
 
     private P05() {
     }

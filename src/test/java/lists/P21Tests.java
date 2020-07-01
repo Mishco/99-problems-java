@@ -12,10 +12,10 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasSize;
 
 
-public class P21Tests {
+class P21Tests {
 
     @Test
-    public void shouldInsertElementAtSecondPosition() {
+    void shouldInsertElementAtSecondPosition() {
         List<String> input = Stream.of("a", "b", "c", "d").collect(toList());
         List<String> result = P21.insertAt(input, 2, "alfa");
         assertThat(result, hasSize(5));
@@ -24,7 +24,7 @@ public class P21Tests {
     }
 
     @Test
-    public void shouldInsertElementAtFirstPosition() {
+    void shouldInsertElementAtFirstPosition() {
         List<String> input = Stream.of("a", "b", "c", "d").collect(toList());
         List<String> result = P21.insertAt(input, 1, "alfa");
         assertThat(result, hasSize(5));
@@ -33,7 +33,7 @@ public class P21Tests {
     }
 
     @Test
-    public void shouldInsertElementAtEnd() {
+    void shouldInsertElementAtEnd() {
         List<String> input = Stream.of("a", "b", "c", "d").collect(toList());
         List<String> result = P21.insertAt(input, 5, "alfa");
         assertThat(result, hasSize(5));

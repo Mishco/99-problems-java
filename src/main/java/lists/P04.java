@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Class for getting length of the list.
  */
-public final class P04 {
+  final class P04 {
 
     private P04() {
     }
