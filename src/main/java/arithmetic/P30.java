@@ -3,7 +3,7 @@ package arithmetic;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class P30 {
+  final class P30 {
 
     private P30() {
     }
@@ -14,7 +14,7 @@ public final class P30 {
      * @param input input number
      * @return flat list containing the prime factors in ascending order.
      */
-    public static List<Integer> primeFactors(final int input) {
+      static List<Integer> primeFactors(final int input) {
         final var firstPrime = 2;
         List<Integer> res = new ArrayList<>();
 

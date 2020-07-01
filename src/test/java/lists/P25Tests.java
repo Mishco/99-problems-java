@@ -10,10 +10,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasSize;
 
-public class P25Tests {
+class P25Tests {
 
     @Test
-    public void shouldGenerateRandomPermutationOfElementsOfAList()  {
+    void shouldGenerateRandomPermutationOfElementsOfAList() {
         List<String> permutation = P25.randomPermutation(Stream.of("a", "b", "c", "d", "e", "f").collect(toList()));
         assertThat(permutation, hasSize(6));
         assertThat(permutation, containsInAnyOrder("a", "b", "c", "d", "e", "f"));

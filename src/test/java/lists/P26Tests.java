@@ -12,16 +12,16 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class P26Tests {
+class P26Tests {
     @Test
-    public void shouldFindAllCombinationsOfSize3FromAListWithSize6() {
+    void shouldFindAllCombinationsOfSize3FromAListWithSize6() {
         List<String> input = Stream.of("a", "b", "c", "d", "e", "f").collect(toList());
         List<List<String>> combinations = P26.combinations(input, 3);
         assertThat(combinations, hasSize(20));
     }
 
     @Test
-    public void shouldReturnEmptyList() {
+    void shouldReturnEmptyList() {
         List<List<Object>> input = P26.combinations(Collections.emptyList(), 0);
         assertTrue(input.isEmpty());
     }

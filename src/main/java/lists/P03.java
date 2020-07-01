@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 /**
  * Class for finding the K-th element in list.
  */
-public final class P03 {
+  final class P03 {
 
     private P03() {
     }
