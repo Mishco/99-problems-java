@@ -40,8 +40,8 @@ public final class P34 {
     ) {
         List<SimpleEntry<Integer, List<Integer>>> list = new ArrayList<>();
         for (SimpleEntry<Integer, List<Integer>> g : goldbachList(inputRange)) {
-            if (g.getValue().get(0) > interval &&
-                    g.getValue().get(1) > interval) {
+            if (g.getValue().get(0) > interval
+                    && g.getValue().get(1) > interval) {
                 list.add(g);
             }
         }
