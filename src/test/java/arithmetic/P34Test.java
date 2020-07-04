@@ -1,6 +1,5 @@
 package arithmetic;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.AbstractMap;
@@ -15,7 +14,6 @@ import static org.junit.Assert.assertThat;
 class P34Test {
 
     @Test
-    @Disabled
     void shouldProduceAListOfGoldbachCompositions() {
         List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachList(IntStream.rangeClosed(9, 20));
         assertThat(compositions, hasSize(6));
@@ -30,9 +28,8 @@ class P34Test {
     }
 
     @Test
-    @Disabled
     void shouldProduceAListOfGoldbachCompositionsWhereBothPrimeNumbersAreGreaterThan50() {
-        List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachList1(IntStream.rangeClosed(1, 2000), 50);
+        List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachInterval(IntStream.rangeClosed(1, 2000), 50);
         assertThat(compositions, hasSize(4));
         assertThat(compositions, hasItems(
                 new AbstractMap.SimpleEntry<>(992, Arrays.asList(73, 919)),
