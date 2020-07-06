@@ -1,7 +1,6 @@
 package arithmetic;
 
 import java.util.AbstractMap.SimpleEntry;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -38,13 +37,9 @@ public final class P34 {
             final IntStream inputRange,
             final int interval
     ) {
-        List<SimpleEntry<Integer, List<Integer>>> list = new ArrayList<>();
-        for (SimpleEntry<Integer, List<Integer>> g : goldbachList(inputRange)) {
-            if (g.getValue().get(0) > interval
-                    && g.getValue().get(1) > interval) {
-                list.add(g);
-            }
-        }
-        return list;
+        return goldbachList(inputRange)
+                .stream()
+                .filter(g -> g.getValue().get(0) > interval)
+                .collect(toList());
     }
 }
