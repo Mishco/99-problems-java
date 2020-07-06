@@ -40,137 +40,111 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 === Lists
 
 ==== link:/src/main/java/lists/P01.java[P01 - Find the last element of the list]
-
 ==== link:/src/main/java/lists/P02.java[P02 - Find the second last element of the list]
-
 ==== link:/src/main/java/lists/P03.java[P03 - Find the kth element from the list]
-
 ==== link:/src/main/java/lists/P04.java[P04 - Find the number of elements of a list]
-
 ==== link:/src/main/java/lists/P05.java[P05 - Reverse a list]
-
 ==== link:/src/main/java/lists/P06.java[P06 - Find out whether a list is a palindrome]
-
 ==== link:/src/main/java/lists/P07.java[P07 - Flatten a nested list structure]
-
 ==== link:/src/main/java/lists/P08.java[P08 - Eliminate consecutive duplicates of list elements.]
-
 ==== link:/src/main/java/lists/P09.java[P09 - Pack consecutive duplicates of list elements into sublists]
-
 ==== link:/src/main/java/lists/P10.java[P10 - Run-length encoding of a list.]
-
 ==== link:/src/main/java/lists/P11.java[P11 - Modified run-length encoding.]
-
 ==== link:/src/main/java/lists/P12.java[P12 - Decode a run-length encoded list.]
-
 ==== link:/src/main/java/lists/P13.java[P13 - Run-length encoding of a list (direct solution).]
-
 ==== link:/src/main/java/lists/P14.java[P14 - Duplicate the elements of a list.]
-
 ==== link:/src/main/java/lists/P15.java[P15 - Duplicate the elements of a list a given number of times.]
-
 ==== link:/src/main/java/lists/P16.java[P16 - Drop every N'th element from a list.]
-
 ==== link:/src/main/java/lists/P17.java[P17 - Split a list into two parts; the length of the first part is given.]
-
 ==== link:/src/main/java/lists/P18.java[P18 - Extract a slice from a list.]
-
 ==== link:/src/main/java/lists/P19.java[P19 - Rotate a list N places to the left.]
-
 ==== link:/src/main/java/lists/P20.java[P20 - Remove the K'th element from a list.]
-
 ==== link:/src/main/java/lists/P21.java[P21 - Insert an element at a given position into a list.]
-
 ==== link:/src/main/java/lists/P22.java[P22 - Create a list containing all integers within a given range.]
-
 ==== link:/src/main/java/lists/P23.java[P23 - Extract a given number of randomly selected elements from a list.]
-
 ==== link:/src/main/java/lists/P24.java[P24 - Lotto: Draw N different random numbers from the set 1..M.]
-
 ==== link:/src/main/java/lists/P25.java[P25 - Generate a random permutation of the elements of a list.]
-
 ==== link:/src/main/java/lists/P26.java[P26 - Generate the combinations of K distinct objects chosen from the N elements of a list]
-
 ==== link:/src/main/java/lists/P27.java[P27 - Group the elements of a set into disjoint subsets.]
-
 ==== link:/src/main/java/lists/P28.java[P28 - Sorting a list of lists according to length of sublists]
 
 === Arithmetic
 
-==== P29 - Determine whether a given integer number is prime.
-==== P30 - Determine the prime factors of a given positive integer.
-==== P31 - Determine the prime factors of a given positive integer (2).
-==== P32 - A list of prime numbers.
-==== P33 - Goldbach's conjecture.
-==== P34 - A list of Goldbach compositions.
-==== P35 - Determine the greatest common divisor of two positive integer numbers.
-==== P36 - Calculate Euler's totient function phi(m).
-==== P37 - Calculate Euler's totient function phi(m) (2).
-==== P38 - Compare the two methods of calculating Euler's totient function.
+==== link:/src/main/java/lists/P29.java[P29 - Determine whether a given integer number is prime.]
+==== link:/src/main/java/lists/P30.java[P30 - Determine the prime factors of a given positive integer.]
+==== link:/src/main/java/lists/P31.java[P31 - Determine the prime factors of a given positive integer (2).]
+==== link:/src/main/java/lists/P32.java[P32 - A list of prime numbers.]
+==== link:/src/main/java/lists/P33.java[P33 - Goldbach's conjecture.]
+==== link:/src/main/java/lists/P34.java[P34 - A list of Goldbach compositions.]
+==== link:/src/main/java/lists/P35.java[P35 - Determine the greatest common divisor of two positive integer numbers.]
+==== link:/src/main/java/lists/P36.java[P36 - Determine whether two positive integer numbers are coprime.]
+==== link:/src/main/java/lists/P37.java[P37 - Calculate Euler's totient function phi(m).]
+==== link:/src/main/java/lists/P38.java[P38 - Calculate Euler's totient function phi(m) (2).]
+==== link:/src/main/java/lists/P39.java[P39 - Compare the two methods of calculating Euler's totient function.]
 
 === Logic and Codes
 
-==== P39 - Truth tables for logical expressions.
-==== P40 - Truth tables for logical expressions (2).
-==== P41 - Truth tables for logical expressions (3).
-==== P42 - Gray code.
-==== P43 - Huffman code.
+==== P40 - Truth tables for logical expressions.
+==== P41 - Truth tables for logical expressions (2).
+==== P42 - Truth tables for logical expressions (3).
+==== P43 - Gray code.
+==== P44 - Huffman code.
 
 === Binary Tree
 
-==== P44 - Check whether a given term represents a binary tree
-==== P45 - Construct completely balanced binary trees
-==== P46 - Symmetric binary trees
-==== P47 - Binary search trees (dictionaries)
-==== P48 - Generate-and-test paradigm
-==== P49 - Construct height-balanced binary trees
-==== P50 - Construct height-balanced binary trees with a given number of nodes
-==== P51 - Count the leaves of a binary tree
-==== P52 - Collect the leaves of a binary tree in a list
-==== P53 - Collect the internal nodes of a binary tree in a list
-==== P54 - Collect the nodes at a given level in a list
-==== P55 - Construct a complete binary tree
-==== P56 - Layout a binary tree (1)
-==== P57 - Layout a binary tree (2)
-==== P58 - Layout a binary tree (3)
-==== P59 - A string representation of binary trees
-==== P60 - Preorder and inorder sequences of binary trees
-==== P61 - Dotstring representation of binary trees
+==== P45 - Check whether a given term represents a binary tree
+==== P46 - Construct completely balanced binary trees
+==== P47 - Symmetric binary trees
+==== P48 - Binary search trees (dictionaries)
+==== P49 - Generate-and-test paradigm
+==== P50 - Construct height-balanced binary trees
+==== P51 - Construct height-balanced binary trees with a given number of nodes
+==== P52 - Count the leaves of a binary tree
+==== P53 - Collect the leaves of a binary tree in a list
+==== P54 - Collect the internal nodes of a binary tree in a list
+==== P55 - Collect the nodes at a given level in a list
+==== P56 - Construct a complete binary tree
+==== P57 - Layout a binary tree (1)
+==== P58 - Layout a binary tree (2)
+==== P59 - Layout a binary tree (3)
+==== P60 - A string representation of binary trees
+==== P61 - Preorder and inorder sequences of binary trees
+==== P62 - Dotstring representation of binary trees
 
 === Multiway Trees
 
-==== P62 - Check whether a given term represents a multiway tree
-==== P63 - Count the nodes of a multiway tree
-==== P64 - Tree construction from a node string
-==== P65 - Determine the internal path length of a tree
-==== P66 - Construct the bottom-up order sequence of the tree nodes
-==== P67 - Lisp-like tree representation
+==== P63 - Check whether a given term represents a multiway tree
+==== P64 - Count the nodes of a multiway tree
+==== P65 - Tree construction from a node string
+==== P66 - Determine the internal path length of a tree
+==== P67 - Construct the bottom-up order sequence of the tree nodes
+==== P68 - Lisp-like tree representation
 
 === Graphs
 
-==== P68 - Conversions
-==== P69 - Path from one node to another one
-==== P70 - Cycle from a given node
-==== P71 - Construct all spanning trees
-==== P72 - Construct the minimal spanning tree
-==== P73 - Graph isomorphism
-==== P74 - Node degree and graph coloration
-==== P75 - Depth-first order graph traversal
-==== P76 - Connected components
-==== P77 - Bipartite graphs
-==== P78 - Generate K-regular simple graphs with N nodes
+==== P69 - Conversions
+==== P70 - Path from one node to another one
+==== P71 - Cycle from a given node
+==== P72 - Construct all spanning trees
+==== P73 - Construct the minimal spanning tree
+==== P74 - Graph isomorphism
+==== P75 - Node degree and graph coloration
+==== P76 - Depth-first order graph traversal
+==== P77 - Connected components
+==== P78 - Bipartite graphs
+==== P79 - Generate K-regular simple graphs with N nodes
 
 === Miscellaneous
 
-==== P79 - Eight queens problem
-==== P80 - Knight's tour
-==== P81 - Von Koch's conjecture
-==== P82 - An arithmetic puzzle
-==== P83 - English number words
-==== P84 - Syntax checker
-==== P85 - Sudoku
-==== P86 - Nonograms
-==== P87 - Crossword puzzle (the last P99 in some sources)
+==== P80 - Eight queens problem
+==== P81 - Knight's tour
+==== P82 - Von Koch's conjecture
+==== P83 - An arithmetic puzzle
+==== P84 - English number words
+==== P85 - Syntax checker
+==== P86 - Sudoku
+==== P87 - Nonograms
+==== P88 - Crossword puzzle (the last P99 in some sources)
 
 
 
