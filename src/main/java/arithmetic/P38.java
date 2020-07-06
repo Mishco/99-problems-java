@@ -11,7 +11,7 @@ public final class P38 {
      * Euler's so-called totient function phi(m) different way.
      *
      * @param input input number
-     * @return range result
+     * @return range
      */
     public static int phi(final int input) {
         BigInteger bigInteger = BigInteger.valueOf(input);
@@ -20,8 +20,7 @@ public final class P38 {
                 .stream()
                 .map(entry -> (entry.getKey() - BigInteger.ONE.intValue())
                         * Math.pow(entry.getKey(),
-                        BigInteger.valueOf(entry.getValue())
-                                .min(BigInteger.ONE).intValue()))
+                        (double) entry.getValue() - BigInteger.ONE.intValue()))
                 .mapToInt(Double::intValue)
                 .reduce(1, (i1, i2) -> i1 * i2);
     }
