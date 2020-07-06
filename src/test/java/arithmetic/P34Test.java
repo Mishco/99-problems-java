@@ -43,4 +43,9 @@ class P34Test {
         List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachInterval(IntStream.rangeClosed(1, 100), 1);
         assertThat(compositions, hasSize(49));
     }
+    @Test
+    void shouldGoldbachCompositionsGreaterThan100() {
+        List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachInterval(IntStream.rangeClosed(1, 100), 18);
+        assertThat(compositions, hasSize(1));
+    }
 }
