@@ -39,8 +39,7 @@ public final class P34 {
     ) {
         return goldbachList(inputRange)
                 .stream()
-                .filter(g -> g.getValue().get(0) > interval
-                && g.getValue().get(1) > interval)
+                .filter(g -> g.getValue().get(0) > interval)
                 .collect(toList());
     }
 }
