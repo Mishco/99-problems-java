@@ -17,7 +17,7 @@ public final class P37 {
      * @param input m - number
      * @return Long range
      */
-    public static Long phi(int input) {
+    public static Long phi(final int input) {
         final BigInteger integerInput = BigInteger.valueOf(input);
         return IntStream.rangeClosed(1, integerInput.intValue())
                 .filter(r -> P36.coprime(r, integerInput.intValue()))
