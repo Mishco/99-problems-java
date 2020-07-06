@@ -15,11 +15,11 @@ public final class P36 {
      * @param secondNumber B - number
      * @return true if comprine, false otherwise
      */
-    public static boolean coprime(int firstNumber, int secondNumber) {
-        final BigInteger base = BigInteger.TEN;
-        return P35.gcd(base.pow(firstNumber).min(BigInteger.ONE).intValue(),
-                base.pow(secondNumber).min(BigInteger.ONE).intValue()) == 1;
+    public static boolean coprime(final int firstNumber,
+                                  final int secondNumber) {
+        return P35.gcd(
+                firstNumber,
+                secondNumber) == BigInteger.ONE.intValue();
     }
-
 
 }
