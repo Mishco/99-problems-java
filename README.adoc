@@ -5,7 +5,7 @@
 == Overview
 
 //image:https://travis-ci.org/Mishco/99-problems.svg?branch=master["Build Status", link="https://travis-ci.org/Mishco/99-problems"] image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems&metric=alert_status[Quality Gate Status, link="https://sonarcloud.io/dashboard?id=Mishco_99-problems"] image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems&metric=coverage[Coverage]
-image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems2&metric=alert_status[Quality Gate Status, link="https://sonarcloud.io/dashboard?id=Mishco_99-problems2"]
+image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems2&metric=alert_status[Quality Gate Status, link="https://sonarcloud.io/dashboard?id=Mishco_99-problems2"] image:https://sonarcloud.io/api/project_badges/measure?project=Mishco_99-problems2&metric=coverage[Coverage]
 
 
 This is an adaptation of the link:https://sites.google.com/site/prologsite/prolog-problems[Ninety-Nine Prolog Problems] written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
