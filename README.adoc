@@ -86,7 +86,7 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === Logic and Codes
 
-==== P40 - Truth tables for logical expressions.
+==== link:/src/main/java/logiccodes/P40.java[P40 - Truth tables for logical expressions.]
 ==== P41 - Truth tables for logical expressions (2).
 ==== P42 - Truth tables for logical expressions (3).
 ==== P43 - Gray code.
