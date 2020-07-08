@@ -2,39 +2,15 @@ package logiccodes;
 
 import org.junit.jupiter.api.Test;
 
+import static logiccodes.P41.and;
+import static logiccodes.P41.or;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 class P40Test {
 
-    private Boolean or(final Boolean a, final Boolean b) {
-        return a || b;
-    }
 
-    private Boolean and(final Boolean a, final Boolean b) {
-        return a && b;
-    }
-
-    private Boolean equ(final Boolean a, final Boolean b) {
-        return or(and(a, b), and(!(a), !(b)));
-    }
-
-    private Boolean xor(final Boolean a, final Boolean b) {
-        return !(equ(a, b));
-    }
-
-    private Boolean nand(final Boolean a, final Boolean b) {
-        return !(and(a, b));
-    }
-
-    private Boolean nor(final Boolean a, final Boolean b) {
-        return !(or(a, b));
-    }
-
-    private Boolean impl(final Boolean a, final Boolean b) {
-        return or(!a, b);
-    }
 
     @Test
     void shouldGenerateTruthTable() {
@@ -50,7 +26,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicANDTable() {
-        String table = P40.table(this::and);
+        String table = P40.table(P41::and);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      false\n" +
@@ -62,7 +38,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicORTable() {
-        String table = P40.table(this::or);
+        String table = P40.table(P41::or);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      true\n" +
@@ -73,7 +49,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicEQUTable() {
-        String table = P40.table(this::equ);
+        String table = P40.table(P41::equ);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      false\n" +
@@ -84,7 +60,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicXORTable() {
-        String table = P40.table(this::xor);
+        String table = P40.table(P41::xor);
         String result = "A          B          result\n" +
                 "true       true       false\n" +
                 "true       false      true\n" +
