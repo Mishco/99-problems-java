@@ -4,12 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static logiccodes.P41.and;
 import static logiccodes.P41.or;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 class P40Test {
-
 
 
     @Test
@@ -21,7 +18,7 @@ class P40Test {
                 "false      true       false\n" +
                 "false      false      false";
 
-        assertThat(table, is(equalTo(result)));
+        assertEquals(table, result);
     }
 
     @Test
@@ -33,7 +30,7 @@ class P40Test {
                 "false      true       false\n" +
                 "false      false      false";
 
-        assertThat(table, is(equalTo(result)));
+        assertEquals(table, result);
     }
 
     @Test
@@ -44,7 +41,7 @@ class P40Test {
                 "true       false      true\n" +
                 "false      true       true\n" +
                 "false      false      false";
-        assertThat(table, is(equalTo(result)));
+        assertEquals(table, result);
     }
 
     @Test
@@ -55,7 +52,7 @@ class P40Test {
                 "true       false      false\n" +
                 "false      true       false\n" +
                 "false      false      true";
-        assertThat(table, is(equalTo(result)));
+        assertEquals(table, result);
     }
 
     @Test
@@ -66,7 +63,7 @@ class P40Test {
                 "true       false      true\n" +
                 "false      true       true\n" +
                 "false      false      false";
-        assertThat(table, is(equalTo(result)));
+        assertEquals(table, result);
     }
 
 }
