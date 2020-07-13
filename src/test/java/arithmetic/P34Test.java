@@ -8,10 +8,11 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 import static org.hamcrest.CoreMatchers.hasItems;
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasSize;
 
 class P34Test {
+
 
     @Test
     void shouldProduceAListOfGoldbachCompositions() {
@@ -38,11 +39,13 @@ class P34Test {
                 new AbstractMap.SimpleEntry<>(1928, Arrays.asList(61, 1867))
         ));
     }
+
     @Test
     void shouldGoldbachCompositionsGreaterThan1() {
         List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachInterval(IntStream.rangeClosed(1, 100), 1);
         assertThat(compositions, hasSize(49));
     }
+
     @Test
     void shouldGoldbachCompositionsGreaterThan100() {
         List<AbstractMap.SimpleEntry<Integer, List<Integer>>> compositions = P34.goldbachInterval(IntStream.rangeClosed(1, 100), 18);
