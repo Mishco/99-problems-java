@@ -33,7 +33,7 @@ class P41Test {
 
     @Test
     void shouldGenerateBasicIMPLTable() {
-        String table = P40.table(P41::nor);
+        String table = P40.table(P41::impl);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      false\n" +
