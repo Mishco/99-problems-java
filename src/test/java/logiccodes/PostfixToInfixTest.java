@@ -35,6 +35,7 @@ class PostfixToInfixTest {
         mathPrecedences.put("(", PRIORITY_LEVEL_ZERO);
 
         booleanPrecedences = new HashMap<>();
+        booleanPrecedences.put("equ", PRIORITY_LEVEL_FIVE);
         booleanPrecedences.put("and", PRIORITY_LEVEL_FOUR);
         booleanPrecedences.put("or", PRIORITY_LEVEL_FOUR);
         booleanPrecedences.put("(", PRIORITY_LEVEL_ZERO);
@@ -66,5 +67,13 @@ class PostfixToInfixTest {
         String[] infixNotation2 = {"A", "and", "(", "B", "or", "C", "and", "D", ")"};
         final var rpn = new PostfixToInfix().convertInfixToRPN(infixNotation2, booleanPrecedences).toString();
         assertThat(rpn, CoreMatchers.containsString("[A, B, C, or, D, and, and]"));
+    }
+
+    @Test
+    void textComplexInfixToPrefix() {
+        String input = "A and ( B or C ) equ A and B or A and C";
+        String[] strArray = input.split(" ");
+        final var rpn = new PostfixToInfix().convertInfixToRPN(strArray, booleanPrecedences).toString();
+        assertThat(rpn, CoreMatchers.containsString("[A, B, C, or, A, equ, and, B, and, A, or, C, and]"));
     }
 }

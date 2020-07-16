@@ -2,43 +2,43 @@ package logiccodes;
 
 import java.util.*;
 
+import static logiccodes.P41.equ;
+
 public class TruthTable {
-    public static void main(final String... args) {
-        System.out.println(new TruthTable("a b and"));
-    }
-
-    private interface Operator {
-        boolean evaluate(Stack<Boolean> s);
-    }
-
-    /**
-     * Supported operators and what they do. For more ops, add entries here.
-     */
-    private static final Map<String, Operator> operators = new HashMap<String, Operator>() {{
-        // Can't use && or || because shortcut evaluation may mean the stack is not popped enough
-        put("and", stack -> Boolean.logicalAnd(stack.pop(), stack.pop()));
-        put("or", stack -> Boolean.logicalOr(stack.pop(), stack.pop()));
-        put("!", stack -> !stack.pop());
-        put("^", stack -> !stack.pop().equals(stack.pop()));
-    }};
 
     private final List<String> variables;
     private final String[] symbols;
+    /**
+     * Supported operators and they actions.
+     */
+    private final Map<String, Operator> operators;
+
+    private interface Operator {
+        boolean evaluate(Deque<Boolean> s);
+    }
+
 
     /**
      * Constructs a truth table for the symbols in an expression.
      */
     public TruthTable(final String symbols) {
-        final Set<String> variables = new LinkedHashSet<>();
-        // FIXME symbols should be separated by 'space'
+        final Set<String> tempVariables = new LinkedHashSet<>();
         String[] splited = symbols.split("\\s+");
+        operators = new HashMap<>() {{
+            put("and", stack -> Boolean.logicalAnd(stack.pop(), stack.pop()));
+            put("or", stack -> Boolean.logicalOr(stack.pop(), stack.pop()));
+            put("equ", stack -> equ(stack.pop(), stack.pop()));
+            put("!", stack -> !stack.pop());
+            put("^", stack -> !stack.pop().equals(stack.pop()));
+        }};
+
 
         for (final String symbol : splited) {
             if (!operators.containsKey(symbol)) {
-                variables.add(symbol);
+                tempVariables.add(symbol);
             }
         }
-        this.variables = new ArrayList<>(variables);
+        this.variables = new ArrayList<>(tempVariables);
         this.symbols = splited;
     }
 
@@ -78,21 +78,21 @@ public class TruthTable {
      */
     private static List<List<Boolean>> enumerate(final int size) {
         if (1 == size)
-            return new ArrayList<List<Boolean>>() {{
-                add(new ArrayList<Boolean>() {{
+            return new ArrayList<>() {{
+                add(new ArrayList<>() {{
                     add(false);
                 }});
-                add(new ArrayList<Boolean>() {{
+                add(new ArrayList<>() {{
                     add(true);
                 }});
             }};
 
-        return new ArrayList<List<Boolean>>() {{
+        return new ArrayList<>() {{
             for (final List<Boolean> head : enumerate(size - 1)) {
-                add(new ArrayList<Boolean>(head) {{
+                add(new ArrayList<>(head) {{
                     add(false);
                 }});
-                add(new ArrayList<Boolean>(head) {{
+                add(new ArrayList<>(head) {{
                     add(true);
                 }});
             }
@@ -105,7 +105,7 @@ public class TruthTable {
     private boolean evaluate(final List<Boolean> enumeration) {
         final Iterator<Boolean> i = enumeration.iterator();
         final Map<String, Boolean> values = new HashMap<>();
-        final Stack<Boolean> stack = new Stack<>();
+        final Deque<Boolean> stack = new ArrayDeque<>();
 
         variables.forEach(v -> values.put(v, i.next()));
         for (final String symbol : symbols) {

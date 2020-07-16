@@ -1,10 +1,8 @@
 package logiccodes;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.function.BiPredicate;
-
-import static logiccodes.P40.BOOLEANS;
+import java.util.Map;
 
 /**
  * Generalize problem 3.02 in such a way that the logical expression may.
@@ -35,35 +33,16 @@ public final class P42 {
      * @return result table.
      */
     public static String tableList(final List<String> variables,
-                                   final BiPredicate<List<String>, List<String>> function) {
-        List<String> resultBuilder = new ArrayList<>();
-//        resultBuilder.add("A          B          result");
+                                   final String function) {
+        Map<String, Integer> booleanPrecedences = new HashMap<>();
+        booleanPrecedences.put("equ", 5);
+        booleanPrecedences.put("and", 4);
+        booleanPrecedences.put("or", 4);
+        booleanPrecedences.put("(", 0);
 
+        System.out.println(variables);
 
-        for (String character : variables) {
-            resultBuilder.add(character);
-            resultBuilder.add("\t");
-            for (boolean a : BOOLEANS) {
-                for (boolean b : BOOLEANS) {
-                    // todo parse function
-
-                    resultBuilder.add(
-                            String.format("%-10s %-10s %s",
-                                    a,
-                                    b));
-//                                    function.test(a, b)));
-                }
-            }
-        }
-        return String.join("\n", resultBuilder);
-    }
-
-    /**
-     *
-     * @param inputString
-     */
-    public static void parseStringIntoFunction(
-            final String inputString) {
-
+        var rpn = new PostfixToInfix().convertInfixToRPN(function.split(" "), booleanPrecedences).toString();
+        return new TruthTable(rpn).toString();
     }
 }
