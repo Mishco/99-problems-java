@@ -4,26 +4,34 @@ import java.util.*;
 
 import static logiccodes.P46.equ;
 
-public class TruthTable {
+public final class TruthTable {
 
+    private interface Operator {
+        boolean evaluate(Deque<Boolean> s);
+    }
+
+    /**
+     * Variables (e.g.: A, B, C).
+     */
     private final List<String> variables;
+    /**
+     * Symbols (e.g.: and, or, equ).
+     */
     private final String[] symbols;
     /**
      * Supported operators and they actions.
      */
     private final Map<String, Operator> operators;
 
-    private interface Operator {
-        boolean evaluate(Deque<Boolean> s);
-    }
-
 
     /**
      * Constructs a truth table for the symbols in an expression.
+     *
+     * @param inputSymbols input symbols
      */
-    public TruthTable(final String symbols) {
+    public TruthTable(final String inputSymbols) {
         final Set<String> tempVariables = new LinkedHashSet<>();
-        String[] splited = symbols.split("\\s+");
+        String[] splited = inputSymbols.split("\\s+");
         operators = new HashMap<>() {{
             put("and", stack -> Boolean.logicalAnd(stack.pop(), stack.pop()));
             put("or", stack -> Boolean.logicalOr(stack.pop(), stack.pop()));
@@ -33,9 +41,9 @@ public class TruthTable {
         }};
 
 
-        for (final String symbol : splited) {
-            if (!operators.containsKey(symbol)) {
-                tempVariables.add(symbol);
+        for (final String sym : splited) {
+            if (!operators.containsKey(sym)) {
+                tempVariables.add(sym);
             }
         }
         this.variables = new ArrayList<>(tempVariables);
@@ -74,10 +82,13 @@ public class TruthTable {
     }
 
     /**
-     * Recursively generates T/F values
+     * Recursively generates T/F values.
+     *
+     * @param size list size
+     * @return boolean values
      */
     private static List<List<Boolean>> enumerate(final int size) {
-        if (1 == size)
+        if (1 == size) {
             return new ArrayList<>() {{
                 add(new ArrayList<>() {{
                     add(false);
@@ -86,7 +97,7 @@ public class TruthTable {
                     add(true);
                 }});
             }};
-
+        }
         return new ArrayList<>() {{
             for (final List<Boolean> head : enumerate(size - 1)) {
                 add(new ArrayList<>(head) {{
@@ -97,11 +108,15 @@ public class TruthTable {
                 }});
             }
         }};
+
     }
 
     /**
      * Evaluates the expression for a set of values.
      * Reverse Polish notation makes this bit easy
+     *
+     * @param enumeration list of boolean
+     * @return result table
      */
     private boolean evaluate(final List<Boolean> enumeration) {
         final Iterator<Boolean> i = enumeration.iterator();
