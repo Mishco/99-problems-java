@@ -21,10 +21,32 @@ import java.util.*;
  * <p>
  * Sources
  * - http://rosettacode.org/wiki/Truth_table
- * - https://www.learn4master.com/algorithms/convert-infix-notation-to-reverse-polish-notation-java
  */
 public final class P47 {
+    private enum Operator {
+
+        ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
+        private final int precedence;
+
+        Operator(final int p) {
+            precedence = p;
+        }
+    }
+
+    /**
+     * Operands.
+     */
+    private static final Map<String, Operator> OPERANDS = new HashMap<>();
+
     private P47() {
+        OPERANDS.put("impl", Operator.ONE);
+        OPERANDS.put("or", Operator.TWO);
+        OPERANDS.put("nor", Operator.THREE);
+        OPERANDS.put("xor", Operator.THREE);
+        OPERANDS.put("equ", Operator.THREE);
+        OPERANDS.put("and", Operator.FOUR);
+        OPERANDS.put("nand", Operator.FOUR);
+        OPERANDS.put("not", Operator.FIVE);
     }
 
     /**
@@ -36,55 +58,43 @@ public final class P47 {
      */
     public static String tableList(final List<String> variables,
                                    final String function) {
+        if (variables.isEmpty()) {
+            return null;
+        }
         return new TruthTable(infixToPostfix(function)).toString();
     }
 
 
-    private enum Operator {
-        ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
-        final int precedence;
-
-        Operator(int p) {
-            precedence = p;
-        }
-    }
-
-    private static final Map<String, Operator> ops = new HashMap<>() {{
-        put("impl", Operator.ONE);
-        put("or", Operator.TWO);
-        put("nor", Operator.THREE);
-        put("xor", Operator.THREE);
-        put("equ", Operator.THREE);
-        put("and", Operator.FOUR);
-        put("nand", Operator.FOUR);
-        put("not", Operator.FIVE);
-    }};
-
     private static boolean isHigerPrec(String op, String sub) {
-        return (ops.containsKey(sub) && ops.get(sub).precedence >= ops.get(op).precedence);
+        return (OPERANDS.containsKey(sub)
+                && OPERANDS.get(sub).precedence
+                >= OPERANDS.get(op).precedence);
     }
 
-    private static String infixToPostfix(String infix) {
+    private static String infixToPostfix(final String infix) {
         StringBuilder output = new StringBuilder();
         Deque<String> stack = new LinkedList<>();
 
         Arrays.stream(infix.split("\\s")).forEach(token -> {
-            if (ops.containsKey(token)) {
-                while (!stack.isEmpty() && isHigerPrec(token, stack.peek()))
+            if (OPERANDS.containsKey(token)) {
+                while (!stack.isEmpty() && isHigerPrec(token, stack.peek())) {
                     output.append(stack.pop()).append(' ');
+                }
                 stack.push(token);
             } else if (token.equals("(")) {
                 stack.push(token);
             } else if (token.equals(")")) {
-                while (!stack.peek().equals("("))
+                while (!stack.peek().equals("(")) {
                     output.append(stack.pop()).append(' ');
+                }
                 stack.pop();
             } else {
                 output.append(token).append(' ');
             }
         });
-        while (!stack.isEmpty())
+        while (!stack.isEmpty()) {
             output.append(stack.pop()).append(' ');
+        }
 
         return output.toString();
     }
