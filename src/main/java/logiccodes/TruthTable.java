@@ -2,7 +2,7 @@ package logiccodes;
 
 import java.util.*;
 
-import static logiccodes.P41.equ;
+import static logiccodes.P46.equ;
 
 public class TruthTable {
 
@@ -101,6 +101,7 @@ public class TruthTable {
 
     /**
      * Evaluates the expression for a set of values.
+     * Reverse Polish notation makes this bit easy
      */
     private boolean evaluate(final List<Boolean> enumeration) {
         final Iterator<Boolean> i = enumeration.iterator();
@@ -108,16 +109,11 @@ public class TruthTable {
         final Deque<Boolean> stack = new ArrayDeque<>();
 
         variables.forEach(v -> values.put(v, i.next()));
-        for (final String symbol : symbols) {
-            final Operator op = operators.get(symbol);
-
-            // Reverse Polish notation makes this bit easy
-            stack.push(
-                    null == op
-                            ? values.get(symbol)
-                            : op.evaluate(stack)
-            );
-        }
+        Arrays.stream(symbols).forEach(symbol -> stack.push(
+                null == operators.get(symbol)
+                        ? values.get(symbol)
+                        : operators.get(symbol).evaluate(stack)
+        ));
         return stack.pop();
     }
 }

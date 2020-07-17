@@ -1,7 +1,7 @@
 package logiccodes;
 
-public final class P41 {
-    private P41() {
+public final class P46 {
+    private P46() {
     }
 
     protected static Boolean or(final Boolean a, final Boolean b) {

@@ -86,11 +86,11 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === Logic and Codes
 
-==== link:/src/main/java/logiccodes/P40.java[P40 - Truth tables for logical expressions.]
-==== P41 - Truth tables for logical expressions (2).
-==== P42 - Truth tables for logical expressions (3).
-==== P43 - Gray code.
-==== P44 - Huffman code.
+==== link:/src/main/java/logiccodes/P45.java[P45 - Truth tables for logical expressions.]
+==== P46 - Truth tables for logical expressions (2).
+==== P47 - Truth tables for logical expressions (3).
+==== P48 - Gray code.
+==== P49 - Huffman code.
 
 === Binary Tree
 

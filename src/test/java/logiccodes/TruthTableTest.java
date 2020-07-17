@@ -4,6 +4,7 @@ import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TruthTableTest {
 
@@ -42,20 +43,10 @@ class TruthTableTest {
 
     @Test
     void testComplexTrueTable() {
-        //A and (B or C) equ A and B or A and C
-        // A, B, C, or, A, equ, and, B, and, A, or, C, and
-        final String table = new TruthTable("A, B, C, or, A, equ, and, B, and, A, or, C, and").toString();
-        final String resultTable = "A,B,C A and (B or C) equ A and B or A and C).\n" +
-                "T T T T\n" +
-                "T T F T\n" +
-                "T F T T\n" +
-                "T F F T\n" +
-                "F T T T\n" +
-                "F T F T\n" +
-                "F F T T\n" +
-                "F F F T";
+        final String table = new TruthTable("A B C or and A B and equ A C and or").toString();
+        final String resultTable = "A B C  A B C or and A B and equ A C and or \nF F F  T\nF F T  T\nF T F  T\nF T T  T\nT F F  T\nT F T  T\nT T F  T\nT T T  T\n";
 
-        assertThat(table, CoreMatchers.containsString(resultTable));
+        assertTrue(resultTable.contentEquals(table));
     }
 
 

@@ -2,16 +2,16 @@ package logiccodes;
 
 import org.junit.jupiter.api.Test;
 
-import static logiccodes.P41.and;
-import static logiccodes.P41.or;
+import static logiccodes.P46.and;
+import static logiccodes.P46.or;
 import static org.junit.Assert.assertEquals;
 
-class P40Test {
+class P45Test {
 
 
     @Test
     void shouldGenerateTruthTable() {
-        String table = P40.table((a, b) -> and(a, or(a, b)));
+        String table = P45.table((a, b) -> and(a, or(a, b)));
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      true\n" +
@@ -23,7 +23,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicANDTable() {
-        String table = P40.table(P41::and);
+        String table = P45.table(P46::and);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      false\n" +
@@ -35,7 +35,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicORTable() {
-        String table = P40.table(P41::or);
+        String table = P45.table(P46::or);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      true\n" +
@@ -46,7 +46,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicEQUTable() {
-        String table = P40.table(P41::equ);
+        String table = P45.table(P46::equ);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      false\n" +
@@ -57,7 +57,7 @@ class P40Test {
 
     @Test
     void shouldGenerateBasicXORTable() {
-        String table = P40.table(P41::xor);
+        String table = P45.table(P46::xor);
         String result = "A          B          result\n" +
                 "true       true       false\n" +
                 "true       false      true\n" +

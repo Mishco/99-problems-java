@@ -5,14 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiPredicate;
 
-public final class P40 {
+public final class P45 {
 
     /**
      * Default values of table for input params.
      */
     static final List<Boolean> BOOLEANS = Arrays.asList(true, false);
 
-    private P40() {
+    private P45() {
     }
 
     /**
