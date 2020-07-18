@@ -12,7 +12,7 @@ class P47Test {
     @Test
     void testInfixToPostfix() {
         final var infixToPostfix = P47.infixToPostfix("A and ( B or C ) equ A and B or A and C");
-        final var res = "A B C or and A B and equ A C and or";
+        final var res = "A B C or and A B and equ A C and or ";
 
         assertEquals(res, infixToPostfix);
     }
