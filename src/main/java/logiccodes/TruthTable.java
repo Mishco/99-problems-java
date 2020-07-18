@@ -54,29 +54,20 @@ public final class TruthTable {
     public String toString() {
         final StringBuilder result = new StringBuilder();
 
-        for (final String variable : variables) {
-            result.append(variable).append(' ');
-        }
+        variables.forEach(variable -> result.append(variable).append(' '));
         result.append(' ');
-        for (final String symbol : symbols) {
-            result.append(symbol).append(' ');
-        }
+        Arrays.stream(symbols).forEach(symbol -> result.append(symbol).append(' '));
         result.append('\n');
-        for (final List<Boolean> values : enumerate(variables.size())) {
+        enumerate(variables.size()).forEach(values -> {
             final Iterator<String> i = variables.iterator();
-
-            for (final Boolean value : values) {
-                result.append(
-                        String.format(
-                                "%-" + i.next().length() + "c ",
-                                value ? 'T' : 'F'
-                        )
-                );
-            }
+            values.stream().map(value -> String.format(
+                    "%-" + i.next().length() + "c ",
+                    value ? 'T' : 'F'
+            )).forEach(result::append);
             result.append(' ')
                     .append(evaluate(values) ? 'T' : 'F')
                     .append('\n');
-        }
+        });
 
         return result.toString();
 
@@ -95,17 +86,19 @@ public final class TruthTable {
             arrLst.add(Collections.singletonList(true));
             return arrLst;
         }
-        return new ArrayList<>() {{
-            for (final List<Boolean> head : enumerate(size - 1)) {
-                add(new ArrayList<>(head) {{
-                    add(false);
-                }});
-                add(new ArrayList<>(head) {{
-                    add(true);
-                }});
-            }
-        }};
 
+        enumerate(size - 1).forEach(head -> {
+            final ArrayList<Boolean> booleanArrayListFalse = new ArrayList<>(Collections.unmodifiableList(head));
+            booleanArrayListFalse.addAll(Collections.singletonList(false));
+
+            final ArrayList<Boolean> booleanArrayListTrue = new ArrayList<>(Collections.unmodifiableList(head));
+            booleanArrayListTrue.addAll(Collections.singletonList(true));
+
+            arrLst.add(Collections.unmodifiableList(booleanArrayListFalse));
+            arrLst.add(Collections.unmodifiableList(booleanArrayListTrue));
+        });
+
+        return arrLst;
     }
 
     /**
@@ -121,14 +114,14 @@ public final class TruthTable {
         final Deque<Boolean> stack = new ArrayDeque<>();
 
         variables.forEach(v -> values.put(v, i.next()));
-        for (String symbol : symbols) {
+        Arrays.stream(symbols).forEach(symbol -> {
             final var tempOperator = operators.get(symbol);
             stack.push(
                     null == tempOperator
                             ? values.get(symbol)
                             : tempOperator.evaluate(stack)
             );
-        }
+        });
         return stack.pop();
 
     }
