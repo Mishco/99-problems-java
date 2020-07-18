@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static logiccodes.P46.equ;
+import static logiccodes.P46.xor;
 
 public final class TruthTable {
 
@@ -22,8 +23,15 @@ public final class TruthTable {
     /**
      * Supported operators and they actions.
      */
-    private final Map<String, Operator> operators;
+    private static final Map<String, Operator> operators = new HashMap<>();
 
+    static {
+        operators.put("and", stack -> Boolean.logicalAnd(stack.pop(), stack.pop()));
+        operators.put("or", stack -> Boolean.logicalOr(stack.pop(), stack.pop()));
+        operators.put("equ", stack -> equ(stack.pop(), stack.pop()));
+        operators.put("!", stack -> !stack.pop());
+        operators.put("xor", stack -> xor(stack.pop(), stack.pop()));
+    }
 
     /**
      * Constructs a truth table for the symbols in an expression.
@@ -32,14 +40,6 @@ public final class TruthTable {
      */
     public TruthTable(final String inputSymbols) {
         String[] splited = inputSymbols.split("\\s+");
-
-        operators = new HashMap<>() {{
-            put("and", stack -> Boolean.logicalAnd(stack.pop(), stack.pop()));
-            put("or", stack -> Boolean.logicalOr(stack.pop(), stack.pop()));
-            put("equ", stack -> equ(stack.pop(), stack.pop()));
-            put("!", stack -> !stack.pop());
-            put("^", stack -> !stack.pop().equals(stack.pop()));
-        }};
 
         this.variables = Arrays
                 .stream(splited)
@@ -90,16 +90,11 @@ public final class TruthTable {
      */
     private static List<List<Boolean>> enumerate(final int size) {
         List<List<Boolean>> arrLst = new ArrayList<>();
-        if (1 == size)
-            return new ArrayList<>() {{
-                add(new ArrayList<>() {{
-                    add(false);
-                }});
-                add(new ArrayList<>() {{
-                    add(true);
-                }});
-            }};
-
+        if (1 == size) {
+            arrLst.add(Collections.singletonList(false));
+            arrLst.add(Collections.singletonList(true));
+            return arrLst;
+        }
         return new ArrayList<>() {{
             for (final List<Boolean> head : enumerate(size - 1)) {
                 add(new ArrayList<>(head) {{
