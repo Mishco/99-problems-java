@@ -22,7 +22,7 @@ public final class TruthTable {
     /**
      * Supported operators and they actions.
      */
-    private final Map<String, Operator> operators = new HashMap<>();
+    private final Map<String, Operator> operators;
 
 
     /**
@@ -33,13 +33,13 @@ public final class TruthTable {
     public TruthTable(final String inputSymbols) {
         String[] splited = inputSymbols.split("\\s+");
 
-        operators.put("and", stack ->
-                Boolean.logicalAnd(stack.pop(), stack.pop()));
-        operators.put("or", stack ->
-                Boolean.logicalOr(stack.pop(), stack.pop()));
-        operators.put("equ", stack -> equ(stack.pop(), stack.pop()));
-        operators.put("!", stack -> !stack.pop());
-        operators.put("^", stack -> !stack.pop().equals(stack.pop()));
+        operators = new HashMap<>() {{
+            put("and", stack -> Boolean.logicalAnd(stack.pop(), stack.pop()));
+            put("or", stack -> Boolean.logicalOr(stack.pop(), stack.pop()));
+            put("equ", stack -> equ(stack.pop(), stack.pop()));
+            put("!", stack -> !stack.pop());
+            put("^", stack -> !stack.pop().equals(stack.pop()));
+        }};
 
         this.variables = Arrays
                 .stream(splited)
@@ -54,25 +54,32 @@ public final class TruthTable {
     public String toString() {
         final StringBuilder result = new StringBuilder();
 
-        variables.forEach(variable -> result.append(variable).append(' '));
+        for (final String variable : variables) {
+            result.append(variable).append(' ');
+        }
         result.append(' ');
-        Arrays.stream(symbols)
-                .forEach(symbol -> result
-                        .append(symbol)
-                        .append(' '));
+        for (final String symbol : symbols) {
+            result.append(symbol).append(' ');
+        }
         result.append('\n');
-        enumerate(variables.size()).forEach(values -> {
+        for (final List<Boolean> values : enumerate(variables.size())) {
             final Iterator<String> i = variables.iterator();
-            values.stream().map(value -> String.format(
-                    "%-" + i.next().length() + "c ",
-                    value ? 'T' : 'F'
-            )).forEach(result::append);
+
+            for (final Boolean value : values) {
+                result.append(
+                        String.format(
+                                "%-" + i.next().length() + "c ",
+                                value ? 'T' : 'F'
+                        )
+                );
+            }
             result.append(' ')
                     .append(evaluate(values) ? 'T' : 'F')
                     .append('\n');
-        });
+        }
 
         return result.toString();
+
     }
 
     /**
@@ -83,19 +90,26 @@ public final class TruthTable {
      */
     private static List<List<Boolean>> enumerate(final int size) {
         List<List<Boolean>> arrLst = new ArrayList<>();
+        if (1 == size)
+            return new ArrayList<>() {{
+                add(new ArrayList<>() {{
+                    add(false);
+                }});
+                add(new ArrayList<>() {{
+                    add(true);
+                }});
+            }};
 
-        if (1 == size) {
-            arrLst.add(Collections.singletonList(false));
-            arrLst.add(Collections.singletonList(true));
-            return arrLst;
-        }
-        List<List<Boolean>> enumerate = enumerate(size - 1);
-        enumerate.forEach(head -> {
-            arrLst.add(Collections.singletonList(false));
-            arrLst.add(Collections.singletonList(true));
-        });
-
-        return arrLst;
+        return new ArrayList<>() {{
+            for (final List<Boolean> head : enumerate(size - 1)) {
+                add(new ArrayList<>(head) {{
+                    add(false);
+                }});
+                add(new ArrayList<>(head) {{
+                    add(true);
+                }});
+            }
+        }};
 
     }
 
@@ -112,11 +126,15 @@ public final class TruthTable {
         final Deque<Boolean> stack = new ArrayDeque<>();
 
         variables.forEach(v -> values.put(v, i.next()));
-        Arrays.stream(symbols).forEach(symbol -> stack.push(
-                null == operators.get(symbol)
-                        ? values.get(symbol)
-                        : operators.get(symbol).evaluate(stack)
-        ));
+        for (String symbol : symbols) {
+            final var tempOperator = operators.get(symbol);
+            stack.push(
+                    null == tempOperator
+                            ? values.get(symbol)
+                            : tempOperator.evaluate(stack)
+            );
+        }
         return stack.pop();
+
     }
 }

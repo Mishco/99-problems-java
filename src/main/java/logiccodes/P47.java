@@ -26,7 +26,7 @@ public final class P47 {
     private enum Operator {
 
         ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
-        private final int precedence;
+        final int precedence;
 
         Operator(final int p) {
             precedence = p;
@@ -71,7 +71,7 @@ public final class P47 {
                 >= OPERANDS.get(op).precedence);
     }
 
-    private static String infixToPostfix(final String infix) {
+    public static String infixToPostfix(final String infix) {
         StringBuilder output = new StringBuilder();
         Deque<String> stack = new LinkedList<>();
 
