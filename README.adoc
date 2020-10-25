@@ -32,7 +32,7 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 == Technology
 
-* Java 13 / 14(planned) (https://adoptopenjdk.net/)
+* Java 13 / 14 (planned) (https://adoptopenjdk.net/)
 * Maven
 * Junit5
 
@@ -90,7 +90,7 @@ My Numbering (ascending from 01) / numbering from Berne University
 ==== link:/src/main/java/logiccodes/P40.java[P40/P46 - Truth tables for logical expressions.]
 ==== link:/src/main/java/logiccodes/P41.java[P41/P47 - Truth tables for logical expressions (2).]
 ==== link:/src/main/java/logiccodes/P42.java[P42/P48 - Truth tables for logical expressions (3).]
-==== P43/P49 - Gray code.
+==== link:/src/main/java/logiccodes/P43GrayCode.java[P43/P49 - Gray code.]
 ==== P44/P50 - Huffman code.
 
 === Binary Tree
