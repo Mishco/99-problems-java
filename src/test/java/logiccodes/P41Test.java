@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
 
-class P46Test {
+class P41Test {
 
 
     @Test
     void shouldGenerateBasicNANDTable() {
-        String table = P45.table(P46::nand);
+        String table = P40.table(P41::nand);
         String result = "A          B          result\n" +
                 "true       true       false\n" +
                 "true       false      true\n" +
@@ -21,7 +21,7 @@ class P46Test {
 
     @Test
     void shouldGenerateBasicNORTable() {
-        String table = P45.table(P46::nor);
+        String table = P40.table(P41::nor);
         String result = "A          B          result\n" +
                 "true       true       false\n" +
                 "true       false      false\n" +
@@ -33,7 +33,7 @@ class P46Test {
 
     @Test
     void shouldGenerateBasicIMPLTable() {
-        String table = P45.table(P46::impl);
+        String table = P40.table(P41::impl);
         String result = "A          B          result\n" +
                 "true       true       true\n" +
                 "true       false      false\n" +

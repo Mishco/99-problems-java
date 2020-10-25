@@ -22,7 +22,7 @@ import java.util.*;
  * Sources
  * - http://rosettacode.org/wiki/Truth_table
  */
-public final class P47 {
+public final class P42 {
     private enum Operator {
         ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
         final int precedence;
@@ -45,7 +45,7 @@ public final class P47 {
         OPERATOR_MAP.put("not", Operator.FIVE);
     }
 
-    private P47() {
+    private P42() {
 
     }
 

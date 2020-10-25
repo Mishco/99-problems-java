@@ -3,8 +3,8 @@ package logiccodes;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static logiccodes.P46.equ;
-import static logiccodes.P46.xor;
+import static logiccodes.P41.equ;
+import static logiccodes.P41.xor;
 
 public final class TruthTable {
 

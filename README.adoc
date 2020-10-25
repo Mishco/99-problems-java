@@ -71,25 +71,25 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 
 === Arithmetic
 
-==== link:/src/main/java/lists/P29.java[P29 - Determine whether a given integer number is prime.]
-==== link:/src/main/java/lists/P30.java[P30 - Determine the prime factors of a given positive integer.]
-==== link:/src/main/java/lists/P31.java[P31 - Determine the prime factors of a given positive integer (2).]
-==== link:/src/main/java/lists/P32.java[P32 - A list of prime numbers.]
-==== link:/src/main/java/lists/P33.java[P33 - Goldbach's conjecture.]
-==== link:/src/main/java/lists/P34.java[P34 - A list of Goldbach compositions.]
-==== link:/src/main/java/lists/P35.java[P35 - Determine the greatest common divisor of two positive integer numbers.]
-==== link:/src/main/java/lists/P36.java[P36 - Determine whether two positive integer numbers are coprime.]
-==== link:/src/main/java/lists/P37.java[P37 - Calculate Euler's totient function phi(m).]
-==== link:/src/main/java/lists/P38.java[P38 - Calculate Euler's totient function phi(m) (2).]
-==== link:/src/main/java/lists/P39.java[P39 - Compare the two methods of calculating Euler's totient function.]
+==== link:/src/main/java/lists/P29.java[P29/P31 - Determine whether a given integer number is prime.]
+==== link:/src/main/java/lists/P30.java[P30/P32 - Determine the prime factors of a given positive integer.]
+==== link:/src/main/java/lists/P31.java[P31/P33 - Determine the prime factors of a given positive integer (2).]
+==== link:/src/main/java/lists/P32.java[P32/P34 - A list of prime numbers.]
+==== link:/src/main/java/lists/P33.java[P33/P35 - Goldbach's conjecture.]
+==== link:/src/main/java/lists/P34.java[P34/P36 - A list of Goldbach compositions.]
+==== link:/src/main/java/lists/P35.java[P35/P37 - Determine the greatest common divisor of two positive integer numbers.]
+==== link:/src/main/java/lists/P36.java[P36/P38 - Determine whether two positive integer numbers are coprime.]
+==== link:/src/main/java/lists/P37.java[P37/P39 - Calculate Euler's totient function phi(m).]
+==== link:/src/main/java/lists/P38.java[P38/P40 - Calculate Euler's totient function phi(m) (2).]
+==== link:/src/main/java/lists/P39.java[P39/P41 - Compare the two methods of calculating Euler's totient function.]
 
 === Logic and Codes
 
-==== link:/src/main/java/logiccodes/P45.java[P45 - Truth tables for logical expressions.]
-==== link:/src/main/java/logiccodes/P46.java[P46 - Truth tables for logical expressions (2).]
-==== link:/src/main/java/logiccodes/P47.java[P42 - Truth tables for logical expressions (3).]
-==== P43 - Gray code.
-==== P44 - Huffman code.
+==== link:/src/main/java/logiccodes/P40.java[P40/P46 - Truth tables for logical expressions.]
+==== link:/src/main/java/logiccodes/P41.java[P41/P47 - Truth tables for logical expressions (2).]
+==== link:/src/main/java/logiccodes/P42.java[P42/P48 - Truth tables for logical expressions (3).]
+==== P43/P49 - Gray code.
+==== P44/P50 - Huffman code.
 
 === Binary Tree
 
