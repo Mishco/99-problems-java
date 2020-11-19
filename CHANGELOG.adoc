@@ -1,0 +1,174 @@
+** v.1.0.0
+* Update .gitlab-ci.yml
+* Add .gitlab-ci.yml
+* Add P30
+* Repair javadoc
+* Refactor of code
+* Prime test for int number
+* Prepare for arithmetic part
+* Update version of pom.xml
+* Update and fix p28
+* Update README.adoc
+* Update P28 for sort
+* Preparation for P28
+* Fix issue with 26 in test
+* Update P27 javadoc
+* Update P27 in README.adoc
+* Update P27 and fix issue
+* Update P27
+* Prepare for P27
+* Add and clean P26
+* Refactor P26
+* Repair P26
+* Add javadoc
+* Add tests for P27
+* Fixing tests
+* Add tests for P26
+* Add tests for P26
+* REmaked solution for P26
+* First solution for P26
+* First solution for P26
+* First hint
+* Prepare for P26
+* Update P25
+* Repair issue with p23 and solve p25
+* Prepare for P25
+* Update README.adoc
+* Update P24
+* Solve for P24 with previous two solution
+* Prepare for P24
+* Refactor
+* Update javadoc and refactor
+* Solve problem with invalid index
+* First particular solution for P23
+* Prepare for P23
+* Refactor P22
+* Update and solve it P22
+* Update P22
+* Prepare for P22
+* Update the P21
+* Solve the P21 problem
+* Prepare for P21
+* Update and refactor checkstyle
+* Update sun_checks.xml in resources
+* Cleaning issues and refactor javadoc
+* Add sun java check style into maven build plugin
+* Refactor java style and fixing issues
+* Update README.adoc
+* Refactor and add throw P20
+* Refactor P20
+* Solve P20
+* Prepare for P20
+* Update README.adoc
+* Update javadoc P19
+* Refactor and update P19
+* Update P19
+* Solve tests
+* Make green another test
+* First tests return green
+* Update and prepare for P19
+* Update README.adoc
+* Update P18 for simple solution
+* First solution for P18
+* First solution for P18
+* Prepare for P18
+* Update javadoc
+* Refactor solution for P17
+* Refactor solution for P17
+* Update solution for P17
+* First solution for P17
+* Add prepare for P17
+* Update README.adoc
+* Update P16
+* First solution for P16
+* Prepare tests P16
+* Add cache into .travis.yml
+* Update readme
+* Update README.adoc for coverage
+* Add .travis.yml javadoc
+* Fixing javadoc
+* Add P15 stream solution
+* Update README.adoc
+* Renamed from P12Tests
+* Update P12 method
+* Solve P15
+* Refactor method of encodeDirect
+* Refactor method of encodeDirect
+* Add javadoc for P15
+* Prepare for P15 assignment.
+* Clean and refactor class P14
+* Solve P14
+* Preparation P14
+* Update readme
+* Solve P13 with using previous solutions
+* Prepare for P13
+* Update readme
+* Update and refactor P12
+* Refactor P12
+* Refactor P12
+* First solution for P12
+* Add javadoc for P12
+* Cleaning test
+* Add test for P12
+* Merge pull request #2 from Mishco/add-license-1
+* Create LICENSE
+* Update P10Tests.java
+* Update P08Tests.java
+* Update P08Tests.java
+* Refactoring tests for P06
+* Update to java 13
+* Finish all list. Close #1
+* Finish all list.
+* Add some other task for trees. #1
+* Add some other task for trees. #1
+* Update README.adoc after P11
+* Refactoring P11
+* Green tests for P11
+* Preparation for P11
+* Update README.adoc
+* Solve the P10 with previous problem
+* Prepare for P10
+* Update README.adoc
+* Solve P09 problem with similar solution as P08
+* Update return value for P09
+* Adding javadoc for P09
+* Prepare for P09 consecutive duplicates of list elements into sublists.
+* Solve problem 08 with compress of lists
+* Solve problem 08 with compress of lists
+* Adding preparations for another assignment
+* Solve by stream version p07 assignment
+* Prepare for p07 assignment
+* Add hamcrest into pom.xml
+* Update gitignore
+* Update README.adoc
+* Solved isPalindrome method
+* Add find out list is/not a palindrome
+* Update README.adoc
+* Reverse of items in list using Collections
+* Simple reversing items in for loop
+* Add failing test
+* Update README.adoc
+* Update P04.java method
+* Find the lenght of the list P04
+* Table of content for README.adoc #1.
+* Update README.adoc for adding full questions #1.
+* Update README.adoc
+* Adding throw exceptions in P03
+* Update junit tests for P03
+* Update method for kth item from list
+* P03 find the k-th element of list
+* Update readme
+* Update secure
+* Cleaning and refactor travis
+* Adding secure into travis
+* Update travis config
+* Adding .travis.yml for pipeline
+* Adding more tests
+* Cleaning class p02
+* Solve this problem and update README.adoc
+* Adding throw tests for our method
+* Update relative link readme
+* Update readme
+* Find the last but one element of a list (second last)
+* Add p01
+* Setup repository with junit5 and first test

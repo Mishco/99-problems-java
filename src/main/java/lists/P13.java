@@ -1,5 +1,6 @@
 package lists;
 
+
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 
@@ -14,23 +15,27 @@ import static java.util.stream.Collectors.toList;
  * ?- encode_direct([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
  * X = [[4,a],b,[2,c],[2,a],d,[4,e]]
  */
-public class P13 {
+public final class P13 {
 
     private P13() {
     }
 
     /**
-     * Encode direct all items
+     * Encode direct all items.
      *
      * @param list list of items
      * @param <T>  type of item
      * @return list of simple entries
      */
     @SuppressWarnings("unchecked")
-    public static <T> List<SimpleEntry<Integer, T>> encodeDirect(List<String> list) {
+    public static <T> List<SimpleEntry<Integer, T>> encodeDirect(
+            final List<String> list) {
         return P09.pack(list)
                 .stream()
-                .map(sublist -> new SimpleEntry<>(sublist.size(), (T) sublist.get(0)))
+                .map(sublist ->
+                        new SimpleEntry<>(
+                                sublist.size(),
+                                (T) sublist.get(0)))
                 .collect(toList());
     }
 }

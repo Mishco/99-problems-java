@@ -1,0 +1,40 @@
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+
+build:
+  image: maven:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - mvn install test -Dsonar.skip=true
+  artifacts:
+    paths:
+      - target/*.jar
+
+test_variable:
+  stage: test
+  script:
+    - echo $CI_JOB_STAGE # calls a predefined variable
+    - echo $SONAR_HOST_URL # calls a custom variable of type `file` that contains the path to the temp file
+    - echo $SONAR_TOKEN # calls a custom variable of type `env_var`
+
+sonarcloud-check:
+  image: maven:latest
+  stage: test
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install verify sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+  only:
+    - master
+    - develop

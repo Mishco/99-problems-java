@@ -20,13 +20,13 @@ public final class P08 {
     }
 
     /**
-     * Compress repeated items in list
+     * Compress repeated items in list.
      *
      * @param inputList list of item
      * @param <T>       type of item in list
      * @return compressed list of items
      */
-    public static <T> List<T> compress(List<T> inputList) {
+    public static <T> List<T> compress(final List<T> inputList) {
         Objects.requireNonNull(inputList, "List must be not null");
 
         List<T> result = new ArrayList<>();

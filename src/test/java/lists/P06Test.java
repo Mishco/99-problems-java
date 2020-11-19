@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.*;
 import java.util.stream.Stream;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -18,13 +17,13 @@ class P06Test {
 
     @ParameterizedTest
     @MethodSource("generateValidPalindromeStream")
-    public void testValidPalindrome(List<String> list) {
+    void testValidPalindrome(List<String> list) {
         assertTrue(P06.isPalindrome(list));
     }
 
     @ParameterizedTest
     @MethodSource("generateInvalidPalindromes")
-    public void testInvalidPalindrome(List<String> list) {
+    void testInvalidPalindrome(List<String> list) {
         assertFalse(P06.isPalindrome(list));
     }
 
@@ -48,7 +47,8 @@ class P06Test {
     }
 
     @Test
-    public void emptyList() {
-        Assertions.assertThrows(NoSuchElementException.class, () -> P06.isPalindrome(Collections.emptyList()));
+    void emptyList() {
+        final var emptyList = Collections.emptyList();
+        Assertions.assertThrows(NoSuchElementException.class, () -> P06.isPalindrome(emptyList));
     }
 }

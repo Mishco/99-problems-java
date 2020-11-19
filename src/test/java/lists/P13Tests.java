@@ -12,10 +12,10 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 
-public class P13Tests {
+class P13Tests {
 
     @Test
-    public void shouldEncodeAList() {
+    void shouldEncodeAList() {
         List<SimpleEntry<Integer, String>> encodedList = P13.encodeDirect(Arrays.asList("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"));
         assertThat(encodedList, hasSize(6));
         assertThat(encodedList.get(0), is(equalTo(new SimpleEntry<>(4, "a"))));
