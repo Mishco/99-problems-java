@@ -1,4 +1,5 @@
 = 99 Problems in Java
+:author: Michal Slovík
 :toc:
 :toclevels: 2
 
@@ -159,8 +160,3 @@ The main purpose for this repository is to train Java skills and also deepen TDD
 ==== P85 - Sudoku
 ==== P86 - Nonograms
 ==== P87 - Crossword puzzle (the last P99 in some sources)
-
-
-
-
-
