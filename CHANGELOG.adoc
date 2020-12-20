@@ -1,4 +1,8 @@
-** v.1.0.0
+== Plan
+** Move to kotlin
+
+
+== v.1.0.0
 * Update .gitlab-ci.yml
 * Add .gitlab-ci.yml
 * Add P30
