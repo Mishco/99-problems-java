@@ -92,7 +92,7 @@ My Numbering (ascending from 01) / numbering from Berne University
 ==== link:/src/main/java/logiccodes/P41.java[P41/P47 - Truth tables for logical expressions (2).]
 ==== link:/src/main/java/logiccodes/P42.java[P42/P48 - Truth tables for logical expressions (3).]
 ==== link:/src/main/java/logiccodes/P43GrayCode.java[P43/P49 - Gray code.]
-==== P44/P50 - Huffman code.
+==== link:/src/main/java/logiccodes/P44Huffman.java[P44/P50 - Huffman code.]
 
 === Binary Tree
 
