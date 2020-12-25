@@ -96,7 +96,7 @@ My Numbering (ascending from 01) / numbering from Berne University
 
 === Binary Tree
 
-==== P45 - Check whether a given term represents a binary tree
+==== link:/src/main/java/binarytree/P45.java[P45/P51 - Check whether a given term represents a binary tree]
 ==== P46 - Construct completely balanced binary trees
 ==== P47 - Symmetric binary trees
 ==== P48 - Binary search trees (dictionaries)
