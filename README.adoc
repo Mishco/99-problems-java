@@ -140,17 +140,6 @@ My Numbering (ascending from 01) / numbering from Berne University
 
 === Miscellaneous
 
-<<<<<<< HEAD
-==== P79 - Eight queens problem
-==== P80 - Knight's tour
-==== P81 - Von Koch's conjecture
-==== P82 - An arithmetic puzzle
-==== P83 - English number words
-==== P84 - Syntax checker
-==== P85 - Sudoku
-==== P86 - Nonograms
-==== P87 - Crossword puzzle (the last P99 in some sources)
-=======
 ==== P80 - Eight queens problem
 ==== P81 - Knight's tour
 ==== P82 - Von Koch's conjecture
@@ -161,8 +150,3 @@ My Numbering (ascending from 01) / numbering from Berne University
 ==== P87 - Nonograms
 ==== P88 - Crossword puzzle (the last P99 in some sources)
 
-
-
-
-
->>>>>>> a8edca483e4d97255da35b7a34ae8d9449281356
