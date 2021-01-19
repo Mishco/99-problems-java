@@ -12,7 +12,7 @@ public final class P46 {
 
     public static AVLTree createBalancedTree(AVLTree tree) {
         if (tree.isEmpty()) {
-            return new LinkedList<Integer>();
+            return null;
         }            
         List<Integer> inorder = tree.getPrintInorder(tree.root);
         return tree;
