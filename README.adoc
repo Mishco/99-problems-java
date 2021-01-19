@@ -97,7 +97,7 @@ My Numbering (ascending from 01) / numbering from Berne University
 === Binary Tree
 
 ==== link:/src/main/java/binarytree/P45.java[P45/P51 - Check whether a given term represents a binary tree]
-==== P46 - Construct completely balanced binary trees
+==== link:/src/main/java/binarytree/P46.java[P46/P52 - Construct completely balanced binary trees]
 ==== P47 - Symmetric binary trees
 ==== P48 - Binary search trees (dictionaries)
 ==== P49 - Generate-and-test paradigm
