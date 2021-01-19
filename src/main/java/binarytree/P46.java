@@ -9,8 +9,11 @@ public final class P46 {
 
     }
 
-    public static Queue<binarytree.P45.Node> createBalancedTree() {
-        Queue<P45.Node> tree = new LinkedList<>();
+    public static Queue<binarytree.P45.Node> createBalancedTree(AVLTree tree) {
+        if (tree.isEmpty()) {
+            return new List<Integer>();
+        }            
+        List<Integer> inorder = tree.getPrintInorder(tree.root);
         return tree;
     }
 }
