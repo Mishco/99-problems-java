@@ -2,6 +2,7 @@ package binarytree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.List;
 
 public final class P46 {
 
@@ -9,7 +10,7 @@ public final class P46 {
 
     }
 
-    public static Queue<binarytree.P45.Node> createBalancedTree(AVLTree tree) {
+    public static AVLTree createBalancedTree(AVLTree tree) {
         if (tree.isEmpty()) {
             return new List<Integer>();
         }            
