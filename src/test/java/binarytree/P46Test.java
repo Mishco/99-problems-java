@@ -2,22 +2,22 @@ package binarytree;
 
 import org.junit.jupiter.api.Test;
 
-import static binarytree.P45.isTree;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class P46Test {
 
+    private void insert(AVLTree tree, Integer... integers) {
+        for (Integer i : integers)
+            tree.root = tree.insert(tree.root, i);
+    }
 
     @Test
     void testFalseTree() {
+        final AVLTree tree = new AVLTree();
 
-        P45.Node root = new P45.Node(1);
-        root.left = new P45.Node(2);
-        root.right = new P45.Node(3);
-        root.left.left = new P45.Node(4);
-        root.left.right = new P45.Node(5);
-        root.right.right = new P45.Node(6);
-        final var result = P46.createBalancedTree();
+        insert(tree, 10, 20, 30, 40, 50, 25);
+
+        final var result = P46.createBalancedTree(tree);
 
         assertNotNull(result);
     }
