@@ -20,4 +20,46 @@ class P47Test {
 
         assertTrue(P47.isSymmetricTree(tree));
     }
+
+    @Test
+    void testSimpleTree() {
+        AVLTree tree = new AVLTree();
+        tree.root = tree.insert(tree.root, 1);
+        tree.root = tree.insert(tree.root, 2);
+        tree.root = tree.insert(tree.root, 3);
+
+        assertTrue(P47.isSymmetricTree(tree));
+    }
+
+    @Test
+    void testAsymmetricSimpleTree() {
+        AVLTree tree = new AVLTree();
+        tree.root = tree.insert(tree.root, 1);
+        tree.root = tree.insert(tree.root, 2);
+        tree.root = tree.insert(tree.root, 3);
+        tree.root = tree.insert(tree.root, 4);
+
+        assertFalse(P47.isSymmetricTree(tree));
+    }
+
+    @Test
+    void testAsymmetricSimpleTreeSecond() {
+        AVLTree tree = new AVLTree();
+        tree.root = tree.insert(tree.root, 1);
+        tree.root = tree.insert(tree.root, 2);
+
+        assertFalse(P47.isSymmetricTree(tree));
+    }
+
+
+    @Test
+    void testAsymmetricSimpleTreeThird() {
+        AVLTree tree = new AVLTree();
+        tree.root = tree.insert(tree.root, 1);
+        tree.root = tree.insert(tree.root, 2);
+        tree.root = tree.insert(tree.root, 3);
+        tree.root = tree.insert(tree.root, 4);
+
+        assertFalse(P47.isSymmetricTree(tree));
+    }
 }
