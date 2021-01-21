@@ -1,25 +1,29 @@
 package binarytree;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class P46Test {
 
-    private void insert(AVLTree tree, Integer... integers) {
-        for (Integer i : integers)
-            tree.root = tree.insert(tree.root, i);
-    }
-
     @Test
-    void testFalseTree() {
-        final AVLTree tree = new AVLTree();
-
-        insert(tree, 10, 20, 30, 40, 50, 25);
-
-        final var result = P46.createBalancedTree(tree);
-
+    void testBasicTree() {
+        final var result = P46.createBalancedTree(6, 10, 20, 30, 40, 50, 25);
         assertNotNull(result);
     }
 
+
+    @Test
+    void testInvalidTree() {
+        Assertions.assertThrows(NoSuchElementException.class,
+                () -> P46.createBalancedTree(0, 0));
+    }
+
+    @Test
+    void testNullTree() {
+        Assertions.assertNull(P46.createBalancedTree(0, null));
+    }
 }

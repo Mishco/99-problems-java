@@ -1,6 +1,6 @@
 package binarytree;
 
-import java.util.List;
+import java.util.NoSuchElementException;
 
 public final class P46 {
 
@@ -8,11 +8,27 @@ public final class P46 {
 
     }
 
-    public static AVLTree createBalancedTree(AVLTree tree) {
-        if (tree.isEmpty()) {
+
+    /**
+     * Create balanced tree.
+     * cbal_tree(4,T)
+     * Insert all items into AVL (Binary balanced tree).
+     *
+     * @param countNodes number of nodes
+     * @param integers   items
+     * @return avl tree (balanced tree)
+     */
+    public static AVLTree createBalancedTree(Integer countNodes, Integer... integers) {
+        AVLTree tree = new AVLTree();
+        if (integers == null) {
             return null;
         }
-        List<Integer> inorder = tree.getPrintInorder(tree.root);
+        if (countNodes <= 0 || integers.length <= 0) {
+            throw new NoSuchElementException("Nodes items is empty");
+        }
+        for (Integer i : integers)
+            tree.root = tree.insert(tree.root, i);
+
         return tree;
     }
 }
