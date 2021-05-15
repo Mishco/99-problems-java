@@ -1,4 +1,4 @@
-= 99 Problems in Java 16
+= 99 Problems in Java (16)
 :author: Michal Slovík
 :toc:
 :toclevels: 2
@@ -111,7 +111,7 @@ My Numbering (ascending from 01) / numbering from Berne University
 ==== link:/src/main/java/binarytree/P48.java[P48/P54 - Binary search trees (dictionaries)]
 ==== link:/src/main/java/binarytree/P49.java[P49/P55 - Generate-and-test paradigm]
 ==== link:/src/main/java/binarytree/P50.java[P50/P56 - Construct height-balanced binary trees]
-==== P51 - Construct height-balanced binary trees with a given number of nodes
+==== link:/src/main/java/binarytree/P50.java[P51/P57 - Construct height-balanced binary trees with a given number of nodes]
 ==== P52 - Count the leaves of a binary tree
 ==== P53 - Collect the leaves of a binary tree in a list
 ==== P54 - Collect the internal nodes of a binary tree in a list
