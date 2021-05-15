@@ -231,9 +231,11 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <release>16</release>  <!--or <release>10</release>-->
-                    <source>16</source>
-                    <target>16</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
+<!--                    <release>16</release>  &lt;!&ndash;or <release>10</release>&ndash;&gt;-->
+<!--                    <source>16</source>-->
+<!--                    <target>16</target>-->
                 </configuration>
             </plugin>
 
