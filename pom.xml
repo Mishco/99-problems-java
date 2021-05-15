@@ -231,7 +231,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <release>11</release>  <!--or <release>10</release>-->
+                    <release>16</release>  <!--or <release>10</release>-->
                 </configuration>
             </plugin>
 
