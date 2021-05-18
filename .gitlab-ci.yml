@@ -9,7 +9,6 @@ variables:
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
 
 build:
-#  image: maven:3.6.3-openjdk-11
   image: maven:3.8.1-openjdk-16
   stage: build
   services:
@@ -20,15 +19,14 @@ build:
     paths:
       - target/*.jar
 
-test_variable:
-  stage: test
-  script:
-    - echo $CI_JOB_STAGE # calls a predefined variable
-    - echo $SONAR_HOST_URL # calls a custom variable of type `file` that contains the path to the temp file
-    - echo $SONAR_TOKEN # calls a custom variable of type `env_var`
+#test_variable:
+#  stage: test
+#  script:
+#    - echo $CI_JOB_STAGE # calls a predefined variable
+#    - echo $SONAR_HOST_URL # calls a custom variable of type `file` that contains the path to the temp file
+#    - echo $SONAR_TOKEN # calls a custom variable of type `env_var`
 
 sonarcloud-check:
-#  image: maven:3.6.3-openjdk-11
   image: maven:3.8.1-openjdk-16
   stage: test
   cache:
