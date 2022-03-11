@@ -149,7 +149,7 @@ My Numbering (ascending from 01) / numbering from Berne University
 
 === Miscellaneous
 
-==== P80 - Eight queens problem
+==== link:/src/main/java/miscellaneous/EightQueensProblem.java[P80 - Eight queens problem]
 ==== P81 - Knight's tour
 ==== P82 - Von Koch's conjecture
 ==== P83 - An arithmetic puzzle
